@@ -1,0 +1,45 @@
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--section-bg);
+}
+
+.hero-content-title,
+.hero-content-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.scroll-indicator button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator i {
+    color: var(--text-color);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator button:hover i {
+    color: var(--primary-color);
+    transform: translateY(5px);
+}

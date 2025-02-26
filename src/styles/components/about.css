@@ -1,0 +1,117 @@
+/* About Section */
+.about {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about h2 {
+    /* Position the title independently */
+    margin-top: 4rem;
+    margin-bottom: 0;
+    text-align: center;
+    flex-shrink: 0;
+    /* Prevents the title from shrinking */
+}
+
+.about .container {
+    /* Take remaining height after h2 */
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    width: 100%;
+    max-width: 800px;
+}
+
+.flex-image {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    /* margin-bottom: 1.5rem; */
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
+}
+
+.about-image img {
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 991px) {
+    .about-content {
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .about-content .intro {
+        margin-bottom: 0;
+    }
+
+    .about-image {
+        padding: 0 1rem;
+        margin: 2rem 0;
+    }
+}
+
+.about-content .row {
+    position: relative;
+}
+
+.col-lg-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* For the text column */
+.col-lg-6:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.col-lg-6:last-child p {
+    margin: 0.5rem 0;
+    /* Adjust spacing between paragraphs as needed */
+}
+
+.about-content .row {
+    position: relative;
+}
+
+/* Image column */
+.col-lg-6:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.about-image img {
+    height: 330px;
+    width: auto;
+}
+
+/* Text column - this will determine the height */
+.col-lg-6:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.col-lg-6:last-child p {
+    margin: 0.5rem 0;
+}

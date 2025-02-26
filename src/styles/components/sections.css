@@ -1,0 +1,15 @@
+.hero,
+#about {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    /* overflow-y: hidden; */
+    /* Prevents bounce/rubber-band scrolling on some browsers */
+}
+
+.scroll-indicator button {
+    cursor: pointer;
+    /* Add any other styling you want for the button */
+}
