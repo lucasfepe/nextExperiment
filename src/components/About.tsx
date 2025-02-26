@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import styles from '@/ui/about.module.css';
 
 export default function About() {
   return (
-    <section id="about" className="about section">
+    <section id="about" className={`about section ${styles.about}`}>
       <h2>About Me</h2>
       <div className="container">
         <div className="about-content">
