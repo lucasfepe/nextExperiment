@@ -30,7 +30,7 @@
     opacity: 0.9;
 }
 
-#contact {
+.contact {
     position: relative;
     display: flex;
     flex-direction: column;

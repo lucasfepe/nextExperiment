@@ -4,16 +4,13 @@ import { navigate } from "@/hooks/useNagivation";
 export function initScrollEffects(): void {
     // Smooth scrolling for navigation links
     document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor: HTMLAnchorElement) => {
-        debugger;
         anchor.addEventListener('click', function (e: MouseEvent) {
-            debugger;
             e.preventDefault();
             const href = this.getAttribute('href');
 
             if (href) {
                 const targetElement = document.querySelector<HTMLElement>(href);
                 if (targetElement) {  // Add null check
-                    debugger;
                     navigate(e, targetElement);
                 }
             }

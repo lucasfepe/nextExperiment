@@ -3,7 +3,6 @@ interface ButtonElement extends HTMLButtonElement {
 }
 
 export const navigate = (event: MouseEvent | null, element: HTMLElement): void => {
-    debugger;
     event?.preventDefault();
 
     // Get all arrow buttons

@@ -110,6 +110,12 @@
     scroll-snap-align: start;
 }
 
+.home,
+#about {
+    height: 100vh;
+
+}
+
 /* Hide scrollbar across browsers */
 html {
     scrollbar-width: none;
