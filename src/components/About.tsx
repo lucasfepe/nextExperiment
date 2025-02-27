@@ -3,12 +3,12 @@ import styles from '@/ui/about.module.css';
 
 export default function About() {
   return (
-    <section id="about" className={`about section ${styles.about}`}>
+    <section id="about" className={`${styles.about} section`}>
       <h2>About Me</h2>
-      <div className="container">
-        <div className="about-content">
+      <div className={styles.container}>
+        <div className={styles['about-content']}>
           <div className="row">
-            <p className="intro">
+            <p className={styles.intro}>
               Lucas Ferrari Pereira is a multidisciplinary creator with expertise in
               software development, game design, chemical engineering, and dance. He
               earned a BASc in Chemical Engineering from the University of Toronto,
@@ -18,7 +18,7 @@ export default function About() {
 
           <div className="row">
             <div className="col-lg-6 flex-image">
-              <div className="about-image">
+              <div className={styles['about-image']}>
                 <Image
                   src="/assets/images/luke.png"
                   alt="Luke Ferrari"

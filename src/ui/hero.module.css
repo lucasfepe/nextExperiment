@@ -15,14 +15,21 @@
     transition: all 0.8s ease-in-out;
 }
 
+
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 1.5s;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+
+    & :global {
+        animation-name: fadeInUp;
+    }
 }
 
 .scroll-indicator button {
@@ -36,7 +43,12 @@
 .scroll-indicator i {
     color: var(--text-color);
     font-size: 2rem;
-    animation: bounce 2s infinite;
+    animation-duration: 2s;
+    animation-timing-function: infinite;
+
+    & :global {
+        animation-name: bounce;
+    }
 }
 
 .scroll-indicator button:hover i {

@@ -1,5 +1,6 @@
 'use client'
 import { FormEvent, useState } from 'react'
+import styles from '@/ui/contact.module.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,14 +33,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className={styles.contact}>
       <h2>Contact Me</h2>
-      <div className="form-container">
-        <form id="contact-form" onSubmit={handleSubmit}>
+      <div className={styles['form-container']}>
+        <form id="contact-form" className={styles.form} onSubmit={handleSubmit}>
           <input
             id="name"
             type="text"
             placeholder="Name"
+            className={styles.input}
             required
             value={formData.name}
             onChange={(e) => setFormData(prev => ({
@@ -51,6 +53,7 @@ export default function Contact() {
             id="email"
             type="email"
             placeholder="Email"
+            className={styles.input}
             required
             value={formData.email}
             onChange={(e) => setFormData(prev => ({
@@ -61,6 +64,7 @@ export default function Contact() {
           <textarea
             id="message"
             placeholder="Message"
+            className={styles.textarea}
             required
             value={formData.message}
             onChange={(e) => setFormData(prev => ({
@@ -68,13 +72,14 @@ export default function Contact() {
               message: e.target.value
             }))}
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
+            className={styles.button}
             disabled={status === 'loading'}
           >
             {status === 'loading' ? 'Sending...' : 'Send Message'}
           </button>
-          
+
           {status === 'success' && (
             <p className="success-message">Message sent successfully!</p>
           )}
@@ -83,7 +88,7 @@ export default function Contact() {
           )}
         </form>
       </div>
-      <footer>
+      <footer className={styles.footer}>
         <p>&copy; 2025 Luke Ferrari. All rights reserved.</p>
       </footer>
     </section>
