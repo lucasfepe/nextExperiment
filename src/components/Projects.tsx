@@ -27,12 +27,12 @@ export default function Projects() {
   ]);
 
   return (
-    <section id="projects" className={`${styles.projects} section`}>
+    <div className={`${styles.projects}`}>
       <h2>My Projects</h2>
       <div className={styles['project-grid']}>
 
       </div>
 
-    </section>
+    </div>
   );
 }

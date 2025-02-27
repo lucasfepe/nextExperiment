@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import styles from '@/ui/about.module.css';
 
+
 export default function About() {
   return (
-    <section id="about" className={`${styles.about} section`}>
+    <div className={`${styles.about}`}>
       <h2>About Me</h2>
       <div className={styles.container}>
         <div className={styles['about-content']}>
@@ -58,6 +59,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

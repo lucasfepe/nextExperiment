@@ -33,7 +33,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className={styles.contact}>
+    <div className={styles.contact}>
       <h2>Contact Me</h2>
       <div className={styles['form-container']}>
         <form id="contact-form" className={styles.form} onSubmit={handleSubmit}>
@@ -91,6 +91,6 @@ export default function Contact() {
       <footer className={styles.footer}>
         <p>&copy; 2025 Luke Ferrari. All rights reserved.</p>
       </footer>
-    </section>
+    </div>
   );
 }
