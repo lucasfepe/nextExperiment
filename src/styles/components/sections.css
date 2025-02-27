@@ -1,15 +1,19 @@
-.hero,
+/* styles/components/sections.css */
+#home {
+    height: 100vh;
+    width: 100vw;
+}
+
+#about,
+#projects,
+#contact {
+    width: 100vw;
+    min-height: 100vh;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.home,
 #about {
     height: 100vh;
-    width: 100%;
-}
-
-body {
-    /* overflow-y: hidden; */
-    /* Prevents bounce/rubber-band scrolling on some browsers */
-}
-
-.scroll-indicator button {
-    cursor: pointer;
-    /* Add any other styling you want for the button */
 }

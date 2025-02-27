@@ -1,4 +1,4 @@
-/* Root variables for theme colors */
+/* styles/themes/variables.css */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -6,6 +6,7 @@
     --section-bg: #f8f8f8;
     --border-color: #ddd;
     --header-height: 120px;
+    --accent-color: #007bff;
 }
 
 [data-theme="dark"] {

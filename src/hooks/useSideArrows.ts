@@ -1,4 +1,4 @@
-import { navigate, createArrowButton } from '@/hooks/useNagivation';
+import { navigate, createArrowButton } from '@/hooks/useNavigation';
 
 // Initialize navigation setup
 export const initSideScroll = () => {

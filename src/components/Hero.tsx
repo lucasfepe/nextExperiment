@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import styles from '@/ui/hero.module.css';
 import { fadeUpAnimation } from '@/hooks/useAnimations';
-import { navigate } from '@/hooks/useNagivation';
+import { navigate } from '@/hooks/useNavigation';
 
 
 export default function Hero() {

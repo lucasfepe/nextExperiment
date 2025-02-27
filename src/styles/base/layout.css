@@ -1,0 +1,13 @@
+/* styles/base/layout.css */
+section {
+    padding: 5rem 2rem;
+    position: relative;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    width: 200vw;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+}

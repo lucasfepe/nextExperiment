@@ -1,5 +1,5 @@
 import { fadeUpAnimation } from "@/hooks/useAnimations";
-import { navigate } from "@/hooks/useNagivation";
+import { navigate } from "@/hooks/useNavigation";
 
 export function initScrollEffects(): void {
     // Smooth scrolling for navigation links
