@@ -1,12 +1,12 @@
 import Navigation from '@/components/Navigation'
-import Hero from '@/components/Hero/Main'
-import About from '@/components/About/Main'
-import Projects from '@/components/Projects'
-import Contact from '@/components/Contact'
-import { Section } from '@/components/Section';
+import Hero from '@/components/Hero/HeroSection'
+import About from '@/components/About/AboutSection'
+import Projects from '@/components/Projects/ProjectsSection'
+import Contact from '@/components/Contact/ContactSection'
+import { Section } from '@/components/common/Section';
 
 export default function Home() {
-  
+
   return (
     <main>
       <Navigation />
