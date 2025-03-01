@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
 import styles from './styles.module.css';
 import { SectionArrow } from '@/components/common';
@@ -14,6 +15,7 @@ interface Project {
 }
 
 export default function Projects() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [projects] = useState<Project[]>([
     // Add your projects here
     // {
