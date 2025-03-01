@@ -1,6 +1,6 @@
 
 import styles from './styles.module.css';
-import { ContactFormHookReturn } from '@/components/Contact/hooks/useContactForm';
+import { ContactFormHookReturn } from '@/components/Contact/hooks';
 
 type ContactFormProps = ContactFormHookReturn;
 

@@ -1,7 +1,7 @@
 interface ButtonElement extends HTMLButtonElement {
     style: CSSStyleDeclaration;
 }
-
+//very cool: used in three components
 export const navigate = (event: MouseEvent | null, element: HTMLElement): void => {
     event?.preventDefault();
 

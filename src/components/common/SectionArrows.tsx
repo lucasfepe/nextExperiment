@@ -3,13 +3,18 @@
 // components/SectionArrows.tsx
 import { useCallback } from 'react';
 import { navigate } from '@/shared/hooks';
+import { SECTION_ORDER } from '@/shared/constants';
 
 export const SectionArrow = ({ sectionId }: { sectionId: string }) => {
     const handleClick = useCallback(() => {
-        const section = document.getElementById(sectionId);
-        const nextSection = section?.nextElementSibling as HTMLElement;
-        if (nextSection) {
-            navigate(null, nextSection);
+        const currentIndex = SECTION_ORDER.indexOf(sectionId);
+        const nextSectionId = SECTION_ORDER[currentIndex + 1];
+
+        if (nextSectionId) {
+            const nextSection = document.getElementById(nextSectionId);
+            if (nextSection) {
+                navigate(null, nextSection);
+            }
         }
     }, [sectionId]);
 

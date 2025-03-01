@@ -1,4 +1,4 @@
-import { navigate } from "./useNavigation";
+import { navigate } from "@/shared/hooks";
 import { useEffect } from 'react';
 
 export const useNavbarLinks = () => {

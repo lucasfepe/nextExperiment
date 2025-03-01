@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, RefObject } from 'react';
-import { navigate } from '@/components/Navigation/hooks/useNavigation';
+import { navigate } from '@/shared/hooks';
 
 export const useScrollButton = (buttonRef: RefObject<HTMLButtonElement | null>) => {
   useEffect(() => {

@@ -4,7 +4,9 @@ import React, { useEffect, useRef } from 'react'
 import { fadeUpAnimation } from "@/shared/animations"
 
 // Note: this used to be a custom hook
+// but it was refactored into a component
 
+// Adds fade-up animation based on scroll state to children elemnts
 export const ScrollAnimationWrapper = ({ children }: { children: React.ReactNode }) => {
     const wrapperRef = useRef<HTMLDivElement>(null)
 

@@ -2,7 +2,7 @@
 import styles from './styles.module.css';
 import { ContactForm } from './ContactForm';
 import { Footer } from './Footer';
-import { useContactForm } from '@/components/Contact/hooks/useContactForm';
+import { useContactForm } from '@/components/Contact/hooks';
 
 export default function Contact() {
   const { formData, status, handleSubmit, handleInputChange } = useContactForm();
