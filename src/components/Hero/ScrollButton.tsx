@@ -1,6 +1,6 @@
 'use client';
 import { forwardRef } from 'react';
-import styles from '@/ui/hero.module.css';
+import styles from './styles.module.css';
 
 interface ScrollButtonProps {
   onClick: () => void;

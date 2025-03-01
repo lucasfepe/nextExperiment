@@ -1,9 +1,9 @@
 'use client'
 import { useRef } from 'react';
-import styles from '@/ui/navigation.module.css';
-import { useTheme } from '@/hooks/useTheme';
-import { useNavVisibility } from '@/hooks/useNavVisibility';
-import { useMenu } from '@/hooks/useMenu';
+import styles from './styles.module.css';
+import { useTheme } from '@/shared/hooks';
+import { useNavVisibility } from '@/components/Navigation/hooks/useNavVisibility';
+import { useMenu } from '@/components/Navigation/hooks/useMenu';
 import { NavLinks } from './NavLinks';
 
 export default function Navigation() {

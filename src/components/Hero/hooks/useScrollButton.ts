@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, RefObject } from 'react';
-import { navigate } from '@/hooks/useNavigation';
+import { navigate } from '@/components/Navigation/hooks/useNavigation';
 
 export const useScrollButton = (buttonRef: RefObject<HTMLButtonElement | null>) => {
   useEffect(() => {
     const button = buttonRef.current;
-    
+
     const handleClick = () => {
       const aboutSection = document.getElementById('about');
       if (aboutSection) {

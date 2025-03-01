@@ -1,10 +1,13 @@
 import Image from 'next/image'
-import styles from '@/ui/about.module.css';
-
+import styles from './styles.module.css';
+import { ScrollAnimationWrapper } from '@/components/common';
+import { SectionArrow } from '@/components/common';
 
 export default function About() {
+
   return (
-    <div className={`${styles.about}`}>
+    // <ScrollAnimationWrapper>
+    <section id="about" className={`${styles.about} section`}>
       <h2>About Me</h2>
       <div className={styles.container}>
         <div className={styles['about-content']}>
@@ -59,6 +62,8 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+      <SectionArrow sectionId="about" />
+    </section>
+    // </ScrollAnimationWrapper>
   );
 }

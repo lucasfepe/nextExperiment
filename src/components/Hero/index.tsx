@@ -1,15 +1,15 @@
 'use client';
 import { useRef } from 'react';
-import styles from '@/ui/hero.module.css';
-import { useHeroAnimations } from '@/hooks/Hero/useHeroAnimations';
-import { useScrollButton } from '@/hooks/Hero/useScrollButton';
+import styles from './styles.module.css';
+import { useHeroAnimations } from '@/components/Hero/hooks/useHeroAnimations';
+import { useScrollButton } from '@/components/Hero/hooks/useScrollButton';
 import { ScrollButton } from './ScrollButton';
 
 export default function Hero() {
   const scrollButtonRef = useRef<HTMLButtonElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
-  
+
   useHeroAnimations(titleRef, textRef);
   useScrollButton(scrollButtonRef);
 

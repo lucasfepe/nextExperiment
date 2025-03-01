@@ -1,4 +1,4 @@
-import styles from '@/ui/navigation.module.css';
+import styles from './styles.module.css';
 
 interface ThemeToggleProps {
     toggleTheme: () => void;

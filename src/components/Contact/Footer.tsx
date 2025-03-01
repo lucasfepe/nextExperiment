@@ -1,4 +1,4 @@
-import styles from '@/ui/contact.module.css';
+import styles from './styles.module.css';
 
 export const Footer = () => {
     return (

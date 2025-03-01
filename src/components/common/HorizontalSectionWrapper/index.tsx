@@ -10,9 +10,9 @@ interface SectionProps {
     showArrow?: boolean;
 }
 
-export const Section = ({ id, children, showArrow = false }: SectionProps) => {
+export const HorizontalSectionWrapper = ({ id, children, showArrow = false }: SectionProps) => {
     return (
-        <section id={id} className="section">
+        <section id={id} className={`section`}>
             {children}
             {showArrow && <SectionArrow sectionId={id} />}
         </section>

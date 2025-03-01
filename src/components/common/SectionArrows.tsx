@@ -2,7 +2,7 @@
 
 // components/SectionArrows.tsx
 import { useCallback } from 'react';
-import { navigate } from '@/hooks/useNavigation';
+import { navigate } from '@/shared/hooks';
 
 export const SectionArrow = ({ sectionId }: { sectionId: string }) => {
     const handleClick = useCallback(() => {
@@ -14,13 +14,15 @@ export const SectionArrow = ({ sectionId }: { sectionId: string }) => {
     }, [sectionId]);
 
     return (
-        <button 
-            className="side-scroll-arrow"
+        <button
+            className="side-scroll-arrow text-white"
             onClick={handleClick}
             aria-label={`Navigate from ${sectionId}`}
             style={{ opacity: 0, visibility: 'hidden' }}
         >
-            <i className="bi bi-chevron-right fs-4"></i>
+            <i className="bi bi-chevron-right fs-6 icon-bold"></i>
+
+
         </button>
     );
 };

@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, RefObject } from 'react';
-import { fadeUpAnimation } from '@/hooks/useAnimations';
+import { fadeUpAnimation } from '@/shared/animations';
 
 export const useHeroAnimations = (
-  titleRef: RefObject<HTMLHeadingElement | null>, 
+  titleRef: RefObject<HTMLHeadingElement | null>,
   textRef: RefObject<HTMLParagraphElement | null>
 ) => {
   useEffect(() => {

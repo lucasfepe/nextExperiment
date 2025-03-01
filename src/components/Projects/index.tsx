@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Image from "next/image";
-import styles from '@/ui/projects.module.css';
+import styles from './styles.module.css';
+import { SectionArrow } from '@/components/common';
 
 interface Project {
   id: number;
@@ -27,12 +28,12 @@ export default function Projects() {
   ]);
 
   return (
-    <div className={`${styles.projects}`}>
+    <section id="projects" className={`${styles.projects} section`}>
       <h2>My Projects</h2>
       <div className={styles['project-grid']}>
 
       </div>
-
-    </div>
+      <SectionArrow sectionId="projects" />
+    </section>
   );
 }

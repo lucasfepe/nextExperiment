@@ -19,10 +19,8 @@ import '@/styles/base/layout.css';
 import '@/styles/animations/keyframes.css';
 
 // Components
-import '@/styles/components/buttons.css';
+import '@/styles/components/side-scroll-button.css';
 import '@/styles/components/sections.css';
-import { useScrollEffects } from '@/hooks/useScrollEffects'
-
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,7 +34,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  useScrollEffects();
   return (
     <html lang="en">
       <body className={inter.className}>{children}

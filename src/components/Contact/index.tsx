@@ -1,14 +1,14 @@
 'use client'
-import styles from '@/ui/contact.module.css';
+import styles from './styles.module.css';
 import { ContactForm } from './ContactForm';
 import { Footer } from './Footer';
-import { useContactForm } from '@/hooks/useContactForm';
+import { useContactForm } from '@/components/Contact/hooks/useContactForm';
 
 export default function Contact() {
   const { formData, status, handleSubmit, handleInputChange } = useContactForm();
 
   return (
-    <div className={styles.contact}>
+    <section id="contact" className={styles.contact}>
       <h2>Contact Me</h2>
       <div className={styles['form-container']}>
         <ContactForm
@@ -19,6 +19,6 @@ export default function Contact() {
         />
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }

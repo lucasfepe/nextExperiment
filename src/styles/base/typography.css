@@ -13,6 +13,10 @@ h2 {
     padding-top: 60px;
 }
 
+.icon-bold.bi::before {
+    font-weight: 900 !important;
+}
+
 @media screen and (max-height: 900px) {
     h2 {
         padding-top: 0;
