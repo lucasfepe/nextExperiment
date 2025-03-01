@@ -11,7 +11,7 @@ export const useHeroAnimations = (
       fadeUpAnimation(titleRef.current, 200);
     }
     if (textRef.current) {
-      fadeUpAnimation(textRef.current, 800);
+      fadeUpAnimation(textRef.current, 80);
     }
   }, []);
 };

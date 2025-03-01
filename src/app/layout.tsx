@@ -1,10 +1,6 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-// import '@/app/globals.css'
-// import '@/app/variables.css'
-// import '@/app/base.css'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Theme variables first
