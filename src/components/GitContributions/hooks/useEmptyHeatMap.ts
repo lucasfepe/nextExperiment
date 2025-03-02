@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DayElement } from '@/components/GitContributions/types';
 import { calculateDaysFromStart } from '@/components/GitContributions/utils';
 import { useDateRange } from './useDateRange';
