@@ -1,0 +1,21 @@
+.container {
+    background: #ffffff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    max-width: 415px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.heatmapWrapper {
+    position: relative;
+    padding: 20px 0 0 30px;
+    min-height: 128px;
+}
+
+.title {
+    margin-top: 0;
+    padding-top: 0;
+}

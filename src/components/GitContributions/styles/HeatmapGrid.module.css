@@ -1,0 +1,48 @@
+.grid {
+    display: grid;
+    column-gap: 3px;
+    row-gap: 3px;
+    padding: 10px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, 1fr);
+    position: relative;
+}
+
+.day {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    background-color: #ebedf0;
+}
+
+.day:hover {
+    transform: scale(1.2);
+}
+
+.loading {
+    animation: loadingWave var(--wave-duration, 1s) ease-in-out infinite;
+}
+
+@keyframes loadingWave {
+    0% {
+        background-color: #ebedf0;
+    }
+
+    35% {
+        background-color: #ebedf0;
+    }
+
+    50% {
+        background-color: #9c9c9c;
+    }
+
+    65% {
+        background-color: #ebedf0;
+    }
+
+    100% {
+        background-color: #ebedf0;
+    }
+}

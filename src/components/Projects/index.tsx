@@ -1,9 +1,12 @@
 'use client'
 import { useState } from 'react'
+// Cool: added husky to make sure can't push unless eslint passes
+// disable rules for exceptions
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
 import styles from './styles.module.css';
 import { SectionArrow } from '@/components/common';
+import { GitContributions } from '../GitContributions';
 
 interface Project {
   id: number;
@@ -32,6 +35,7 @@ export default function Projects() {
   return (
     <section id="projects" className={`${styles.projects} section`}>
       <h2>My Projects</h2>
+      <GitContributions />
       <div className={styles['project-grid']}>
 
       </div>

@@ -1,0 +1,22 @@
+.controls {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f6f8fa;
+    border-radius: 6px;
+}
+
+.controlGroup {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controlGroup label {
+    min-width: 120px;
+}
+
+.controlGroup input[type="range"] {
+    flex: 1;
+    max-width: 200px;
+}

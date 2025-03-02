@@ -1,0 +1,17 @@
+.day {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    background-color: #ebedf0;
+    /* Default color for placeholder */
+}
+
+.day:hover {
+    transform: scale(1.2);
+}
+
+.day.loading {
+    animation: loadingWave var(--wave-duration, 1s) ease-in-out infinite;
+}
