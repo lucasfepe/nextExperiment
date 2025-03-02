@@ -9,12 +9,20 @@ interface HeatmapGridProps {
     contributionData: Map<string, number>;
     dateRange: { startDate: Date; endDate: Date };
     setDateRange: (range: { startDate: Date; endDate: Date }) => void;
+    waveDelay: number;
 }
 
-export const HeatmapGrid: FC<HeatmapGridProps> = () => {
+export const HeatmapGrid: FC<HeatmapGridProps> = ({
+    contributionData,
+    dateRange,
+    setDateRange,
+    waveDelay
+}) => {
+    const getDelay = (index: number) => `${index * waveDelay}s`;
     const heatmapRef = useRef<HTMLDivElement>(null);
     const tooltipRef = useRef<HTMLDivElement>(null);
-    const { days } = useEmptyHeatMap(heatmapRef, tooltipRef);
+    const { days } = useEmptyHeatMap();
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [tooltipState, setTooltipState] = useState<TooltipProps>({
         text: '',
@@ -37,10 +45,13 @@ export const HeatmapGrid: FC<HeatmapGridProps> = () => {
     };
     return (
         <div ref={heatmapRef} className={styles.grid} id="heatmap">
-            {days.map((day) => (
+            {days.map((day, index) => (
                 <HeatmapDay
                     key={day.date}
-                    day={day}
+                    day={{
+                        ...day,
+                        animationDelay: getDelay(index)
+                    }}
                     onMouseEnter={handleDayMouseEnter}
                     onMouseLeave={handleDayMouseLeave}
                 />

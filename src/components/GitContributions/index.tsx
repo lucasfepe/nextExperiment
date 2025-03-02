@@ -6,12 +6,14 @@ import { Controls } from './Controls';
 import { GitContributionsStyles as styles } from './styles';
 import { useGithubContributions } from './hooks';
 import { useDateRange } from './hooks/useDateRange';
+import { useState } from 'react';
+import { WAVE_SPEED, speedToDelay } from '@/shared/utils';
 
 export const GitContributions = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { contributionData, isLoading, error } = useGithubContributions();
     const { dateRange, setDateRange } = useDateRange();
-
+    const [waveSpeed, setWaveSpeed] = useState<number>(WAVE_SPEED.DEFAULT_WAVE_SPEED);  // Rename the state setter
 
     if (error) {
         return <div>Error loading contribution data: {error.message}</div>;
@@ -31,6 +33,7 @@ export const GitContributions = () => {
                     contributionData={contributionData}
                     dateRange={dateRange}
                     setDateRange={setDateRange}
+                    waveDelay={speedToDelay(waveSpeed)}
                 />
             </div>
             <ColorLegend colors={{
@@ -40,7 +43,7 @@ export const GitContributions = () => {
                 level3: '#30a14e',
                 level4: '#216e39'
             }} />
-            <Controls />
+            <Controls onWaveSpeedChange={setWaveSpeed} defaultWaveSpeed={waveSpeed} />
         </div>
     );
 };
