@@ -18,7 +18,6 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange, defaultWaveSpee
     const [durationValue, setDurationValue] = useState(1);
     const waveSpreadInputRef = useRef<HTMLInputElement>(null);
     const waveDurationInputRef = useRef<HTMLInputElement>(null);
-    const waveSpeedInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         const waveSpreadInput = waveSpreadInputRef.current;
@@ -90,6 +89,7 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange, defaultWaveSpee
                     max={WAVE_SPEED.MAX_SPEED}
                     step={0.001}
                     defaultValue={defaultWaveSpeed}
+                    // Cool: lift wave-delay value up to a common ancestor
                     onChange={(e) => onWaveSpeedChange(Number(e.target.value))}
                 />
             </div>

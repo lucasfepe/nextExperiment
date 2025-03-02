@@ -1,8 +1,3 @@
-interface StyleElementOptions {
-    cssContent: string;
-    id?: string;
-}
-
 /**
  * Creates a style element with the provided CSS content
  * @param {string} cssContent - The CSS content to be added to the style element
@@ -23,6 +18,7 @@ export function createStyleElement(cssContent: string, id: string = ''): HTMLSty
     // Add the CSS content
     if ('styleSheet' in style) {
         // For IE8 and below
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (style as any).styleSheet.cssText = cssContent;
     } else {
         // For modern browsers
