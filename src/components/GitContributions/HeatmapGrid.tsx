@@ -1,4 +1,4 @@
-import { FC, useRef, useEffect, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { Tooltip } from './Tooltip';
 import { useEmptyHeatMap } from './hooks';
 import { HeatmapGridStyles as styles } from './styles';
@@ -11,10 +11,11 @@ interface HeatmapGridProps {
     setDateRange: (range: { startDate: Date; endDate: Date }) => void;
 }
 
-export const HeatmapGrid: FC<HeatmapGridProps> = ({ contributionData, dateRange, setDateRange }) => {
+export const HeatmapGrid: FC<HeatmapGridProps> = () => {
     const heatmapRef = useRef<HTMLDivElement>(null);
     const tooltipRef = useRef<HTMLDivElement>(null);
     const { days } = useEmptyHeatMap(heatmapRef, tooltipRef);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [tooltipState, setTooltipState] = useState<TooltipProps>({
         text: '',
         visible: false,
@@ -36,7 +37,7 @@ export const HeatmapGrid: FC<HeatmapGridProps> = ({ contributionData, dateRange,
     };
     return (
         <div ref={heatmapRef} className={styles.grid} id="heatmap">
-            {days.map((day, index) => (
+            {days.map((day) => (
                 <HeatmapDay
                     key={day.date}
                     day={day}

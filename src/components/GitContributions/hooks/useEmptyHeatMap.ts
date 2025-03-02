@@ -3,10 +3,7 @@ import { DayElement } from '@/components/GitContributions/types';
 import { calculateDaysFromStart } from '@/components/GitContributions/utils';
 import { useDateRange } from './useDateRange';
 
-export const useEmptyHeatMap = (
-    heatmapRef: RefObject<HTMLDivElement | null>,
-    tooltipRef: RefObject<HTMLDivElement | null>
-) => {
+export const useEmptyHeatMap = () => {
     const [days, setDays] = useState<DayElement[]>([]);
     const { dateRange, setDateRange } = useDateRange(true); // true to adjust to Sunday
 

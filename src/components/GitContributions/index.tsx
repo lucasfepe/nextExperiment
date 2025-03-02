@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { HeatmapGrid } from './HeatmapGrid';
 import { MonthsLegend } from './MonthsLegend';
 import { WeekdaysLegend } from './WeekdaysLegend';
@@ -9,6 +8,7 @@ import { useGithubContributions } from './hooks';
 import { useDateRange } from './hooks/useDateRange';
 
 export const GitContributions = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { contributionData, isLoading, error } = useGithubContributions();
     const { dateRange, setDateRange } = useDateRange();
 
