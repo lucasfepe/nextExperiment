@@ -6,4 +6,6 @@ export interface FlipCardProps {
     projectImages: string[];
     features: string[];
     technologies: string[];
+    isExpanded: boolean;
+    onToggle: () => void;
 }

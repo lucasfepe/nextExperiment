@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
 import {
-    getContributionData
+    getPinnedRepos
 } from '@/components/GitContributions/utils'
-export const useGithubContributions = () => {
-    const [contributionData, setContributionData] = useState<Map<string, number>>(new Map());
+import { useState, useEffect } from 'react';
+export const usePinnedRepos = () => {
     const [pinnedRepos, setPinnedRepos] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
@@ -12,10 +11,8 @@ export const useGithubContributions = () => {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-                const contributionData = await
-                    getContributionData()
-                    ;
-                setContributionData(contributionData);
+                const pinnedReposData = await getPinnedRepos();
+                setPinnedRepos(pinnedReposData);
             } catch (err) {
                 setError(err instanceof Error ? err : new Error('Unknown error occurred'));
             } finally {
@@ -26,5 +23,5 @@ export const useGithubContributions = () => {
         fetchData();
     }, []);
 
-    return { contributionData, pinnedRepos, isLoading, error };
+    return { pinnedRepos, isLoading, error };
 };

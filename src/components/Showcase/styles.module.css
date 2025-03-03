@@ -1,0 +1,36 @@
+/* src/components/Showcase/styles.module.css */
+.showcase {
+    width: 100%;
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 2rem;
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: column;
+}
