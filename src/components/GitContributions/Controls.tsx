@@ -12,7 +12,6 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange }) => {
     const {
         updateWaveDuration,
         updateWaveSpread,
-        updateDelayMultiplier,
         updateWaveColor
     } = useAnimationController();
 
