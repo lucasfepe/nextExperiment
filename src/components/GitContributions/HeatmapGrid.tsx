@@ -9,6 +9,7 @@ interface HeatmapGridProps {
     dateRange: { startDate: Date; endDate: Date };
     setDateRange: (range: { startDate: Date; endDate: Date }) => void;
     waveDelay: number;
+    isLoading: boolean;
 }
 
 export const HeatmapGrid: FC<HeatmapGridProps> = ({
@@ -18,17 +19,12 @@ export const HeatmapGrid: FC<HeatmapGridProps> = ({
     dateRange,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setDateRange,
-    waveDelay
+    waveDelay,
+    isLoading
 }) => {
     const getDelay = (index: number) => `${index * waveDelay}s`;
     const { days } = useEmptyHeatMap();
     const [showTooltip, setShowTooltip] = useState(false);
-    const handleDayMouseEnter = (e: React.MouseEvent) => {
-
-    };
-    const handleDayMouseLeave = () => {
-
-    };
 
     return (
         <div
@@ -42,10 +38,10 @@ export const HeatmapGrid: FC<HeatmapGridProps> = ({
                     key={day.date}
                     day={{
                         ...day,
-                        animationDelay: getDelay(index)
+                        animationDelay: getDelay(index),
+                        contributionCount: contributionData.get(day.date) || 0,
+                        isLoading: isLoading
                     }}
-                    onMouseEnter={handleDayMouseEnter}
-                    onMouseLeave={handleDayMouseLeave}
                 />
             ))}
             {contributionData.size === 0 && showTooltip && (

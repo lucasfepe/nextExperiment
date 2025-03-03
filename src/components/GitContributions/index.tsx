@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { WAVE_SPEED, speedToDelay } from '@/shared/utils';
 import { Button, Collapse, Card } from 'react-bootstrap';
 import { ChevronDown, ChevronUp } from 'react-bootstrap-icons';
+import { GIT_CONTIBUTION_LEVEL_COLORS } from './constants';
 
 
 export const GitContributions = () => {
@@ -22,10 +23,6 @@ export const GitContributions = () => {
     if (error) {
         return <div>Error loading contribution data: {error.message}</div>;
     }
-
-    // if (isLoading) {
-    //     return <div>Loading...</div>;
-    // }
 
     const renderButtonContent = () => {
         // First check if there's no contribution data
@@ -81,15 +78,14 @@ export const GitContributions = () => {
                     dateRange={dateRange}
                     setDateRange={setDateRange}
                     waveDelay={speedToDelay(waveSpeed)}
+                    isLoading={isLoading || open}
                 />
             </div>
-            {!isLoading && !open ? <ColorLegend colors={{
-                level0: '#ebedf0',
-                level1: '#9be9a8',
-                level2: '#40c463',
-                level3: '#30a14e',
-                level4: '#216e39'
-            }} /> : <div className={styles.legendPlaceholder}></div>}
+            {
+                !isLoading && !open 
+                    ? <ColorLegend colors={GIT_CONTIBUTION_LEVEL_COLORS}/> 
+                    : <div className={styles.legendPlaceholder}></div>
+            }
             <div className="d-flex justify-content-center">
                 <Button
                     onClick={() => setOpen(!open)}

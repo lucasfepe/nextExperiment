@@ -1,20 +1,39 @@
+import React, { useState } from 'react'
 import { DayElement } from './types';
 import { HeatmapDayStyles as styles } from './styles';
+import { Tooltip } from './Tooltip';
+import { getGitContributionColor } from './utils';
 
 interface HeatmapDayProps {
     day: DayElement;
-    onMouseEnter: (e: React.MouseEvent) => void;
-    onMouseLeave: () => void;
 }
 
-export const HeatmapDay: React.FC<HeatmapDayProps> = ({ day, onMouseEnter, onMouseLeave }) => {
+export const HeatmapDay: React.FC<HeatmapDayProps> = ({ day }) => {
+    const [showTooltip, setShowTooltip] = useState(false);
+    const message = `${day.contributionCount || 0} contributions on ${day.date}`;
+
+    // Determine styles based on loading state
+    const dayStyles = {
+        animationDelay: day.animationDelay,
+        ...(day.isLoading 
+                ? {} 
+                : { backgroundColor: getGitContributionColor(day.contributionCount || 0) })
+    };
+    
     return (
-        <div
-            className={`${styles.day} ${styles.loading}`}
-            data-date={day.date}
-            style={{ animationDelay: day.animationDelay }}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-        />
+        <>
+            <div
+                className={`${styles.day} ${day.isLoading ? styles.loading : ''}`}
+                data-date={day.date}
+                style={dayStyles}
+                onMouseEnter={(e) => {
+                    setShowTooltip(true);
+                }}
+                onMouseLeave={() => {
+                    setShowTooltip(false);
+                }}
+            />
+            {!day.isLoading && showTooltip && <Tooltip text={message} />}
+        </>
     );
 };

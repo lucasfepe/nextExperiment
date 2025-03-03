@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-const GITHUB_USERNAME = 'lucasfepe'
+import { GITHUB_USERNAME } from '@/components/GitContributions/constants';
 export const useGithubContributions = () => {
     const [contributionData, setContributionData] = useState<Map<string, number>>(new Map());
     const [isLoading, setIsLoading] = useState(true);
