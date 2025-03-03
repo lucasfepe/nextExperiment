@@ -56,6 +56,7 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange }) => {
                     step={0.1}
                     value={waveDuration}
                     onChange={handleDurationChange}
+                    className="form-range primary"
                 />
                 <span id="wave-duration-value">{waveDuration.toFixed(1)}</span>
             </div>
@@ -69,6 +70,7 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange }) => {
                     step="5"
                     value={waveSpread}
                     onChange={handleSpreadChange}
+                    className="form-range primary"
                 />
             </div>
             <div className={styles.controlGroup}>
@@ -82,6 +84,7 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange }) => {
                     defaultValue={WAVE_SPEED.DEFAULT_WAVE_SPEED}
                     // Cool: lift wave-delay value up to a common ancestor
                     onChange={(e) => onWaveSpeedChange(Number(e.target.value))}
+                    className="form-range primary"
                 />
             </div>
             <div className={styles.controlGroup}>

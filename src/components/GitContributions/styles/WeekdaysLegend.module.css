@@ -1,11 +1,11 @@
 .weekdays {
     position: absolute;
     left: 0;
-    top: 45px;
+    top: 36px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 92px;
+    height: 101px;
     font-size: 12px;
     color: #586069;
     padding: 2px 0;

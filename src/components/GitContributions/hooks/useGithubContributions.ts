@@ -13,7 +13,7 @@ export const useGithubContributions = () => {
             const isToday = new Date(timestamp).toDateString() === new Date().toDateString();
 
             if (isToday) {
-                await new Promise(resolve => setTimeout(resolve, 30000));
+                await new Promise(resolve => setTimeout(resolve, 7000));
                 return new Map(Object.entries(data));
             }
         }
