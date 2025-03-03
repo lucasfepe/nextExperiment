@@ -1,0 +1,164 @@
+.cardContainer {
+    perspective: 1000px;
+    margin: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 95;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 280px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    z-index: 100;
+}
+
+.card.expanded {
+    width: 800px;
+    height: 500px;
+    transform: rotateY(180deg);
+    z-index: 100;
+}
+
+.cardFront,
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardBack {
+    transform: rotateY(180deg);
+    padding: 40px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.cardBack .thumbnail {
+    height: 300px;
+}
+
+.contentSmall {
+    padding: 10px;
+}
+
+
+.backContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 5px;
+    flex-grow: 1;
+    
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 90;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card {
+    z-index: 100;
+}
+
+.carouselContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+.carouselContainer {
+    position: relative;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    height: 100%;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carouselContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make carousel items fill the container */
+.carouselContainer :global(.carousel-item) {
+    height: 100%;
+}
+
+/* Ensure inner container fills space */
+.carouselContainer :global(.carousel-inner) {
+    height: 100%;
+}
+
+.techBadge {
+    margin: .3em;
+}
+
+.shortDescription {
+    font-size: 10pt;
+    font-style: italic;
+}
+.longDescription {
+    font-size: 11pt;
+    font-style: italic;
+    line-height: 19px;
+}
+
+

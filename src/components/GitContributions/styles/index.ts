@@ -6,3 +6,4 @@ export { default as ColorLegendStyles } from './ColorLegend.module.css';
 export { default as ControlsStyles } from './Controls.module.css';
 export { default as TooltipStyles } from './Tooltip.module.css';
 export { default as HeatmapDayStyles } from './HeatmapDay.module.css';
+export { default as AnimationControllerStyles } from './AnimationController.module.css';

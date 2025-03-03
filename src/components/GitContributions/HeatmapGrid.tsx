@@ -13,7 +13,6 @@ interface HeatmapGridProps {
 }
 
 export const HeatmapGrid: FC<HeatmapGridProps> = ({
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     contributionData,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     dateRange,

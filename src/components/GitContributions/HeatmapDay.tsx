@@ -26,7 +26,7 @@ export const HeatmapDay: React.FC<HeatmapDayProps> = ({ day }) => {
                 className={`${styles.day} ${day.isLoading ? styles.loading : ''}`}
                 data-date={day.date}
                 style={dayStyles}
-                onMouseEnter={(e) => {
+                onMouseEnter={() => {
                     setShowTooltip(true);
                 }}
                 onMouseLeave={() => {

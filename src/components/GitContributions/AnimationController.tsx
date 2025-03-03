@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import styles from './AnimationController.module.css';
+import { AnimationControllerStyles as styles } from './styles';
 
 interface AnimationControllerProps {
     onWaveDurationChange: (duration: number) => void;
