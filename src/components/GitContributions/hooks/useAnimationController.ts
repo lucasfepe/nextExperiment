@@ -1,7 +1,9 @@
 // useAnimationController.ts
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 export const useAnimationController = () => {
+    const [currentColor, setCurrentColor] = useState('#9c9c9c');
+
     const setStyleProperty = useCallback((property: string, value: string) => {
         document.documentElement.style.setProperty(property, value);
     }, []);
@@ -10,13 +12,17 @@ export const useAnimationController = () => {
         setStyleProperty('--wave-duration', duration);
     }, [setStyleProperty]);
 
+    const updateWaveColor = useCallback((color: string) => {
+        setCurrentColor(color);
+    }, []);
+
     const updateWaveSpread = useCallback((spread: number) => {
         const ANIMATION_MIDPOINT = 50;
         const keyframes = `
             @keyframes loadingWave {
                 0% { background-color: #ebedf0; }
                 ${ANIMATION_MIDPOINT - spread}% { background-color: #ebedf0; }
-                50% { background-color: #9c9c9c; }
+                50% { background-color: ${currentColor}; }
                 ${ANIMATION_MIDPOINT + spread}% { background-color: #ebedf0; }
                 100% { background-color: #ebedf0; }
             }
@@ -30,7 +36,7 @@ export const useAnimationController = () => {
         styleElement.setAttribute('data-wave-animation', '');
         styleElement.textContent = keyframes;
         document.head.appendChild(styleElement);
-    }, []);
+    }, [currentColor]);
 
     const updateDelayMultiplier = useCallback((multiplier: number) => {
         return (index: number) => `${index * multiplier}s`;
@@ -39,6 +45,7 @@ export const useAnimationController = () => {
     return {
         updateWaveDuration,
         updateWaveSpread,
-        updateDelayMultiplier
+        updateDelayMultiplier,
+        updateWaveColor
     };
 };

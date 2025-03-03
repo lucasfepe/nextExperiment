@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { ControlsStyles as styles } from './styles';
 import { useAnimationController } from './hooks';
 import { WAVE_SPEED } from '@/shared/utils';
@@ -8,50 +8,42 @@ interface ControlsProps {
     defaultWaveSpeed?: number;
 }
 
-export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange, defaultWaveSpeed = 0.003 }) => {
+export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange }) => {
     const {
         updateWaveDuration,
         updateWaveSpread,
-        updateDelayMultiplier
+        updateDelayMultiplier,
+        updateWaveColor
     } = useAnimationController();
 
-    const [durationValue, setDurationValue] = useState(1);
-    const waveSpreadInputRef = useRef<HTMLInputElement>(null);
-    const waveDurationInputRef = useRef<HTMLInputElement>(null);
+    const [selectedColor, setSelectedColor] = useState('#9c9c9c');
+    const [waveSpread, setWaveSpread] = useState(30);
+    const [waveDuration, setWaveDuration] = useState(1);
 
+    // Effect to initialize and update animations
     useEffect(() => {
-        const waveSpreadInput = waveSpreadInputRef.current;
-        const waveDurationInput = waveDurationInputRef.current;
+        updateWaveSpread(waveSpread);
+        updateWaveDuration(`${waveDuration}s`);
+    }, [waveSpread, waveDuration, updateWaveDuration, updateWaveSpread]);
 
-        if (!waveSpreadInput || !waveDurationInput) return;
+    // Handlers for each control
+    const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newColor = e.target.value;
+        setSelectedColor(newColor);
+        updateWaveColor(newColor);
+    };
 
-        // Get the initial values from the inputs
-        const initialSpread = parseInt(waveSpreadInput.value);
-        const initialDuration = parseFloat(waveDurationInput.value);
+    const handleSpreadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newSpread = parseInt(e.target.value);
+        setWaveSpread(newSpread);
+        updateWaveSpread(newSpread);
+    };
 
-        // Run the animation updates with initial values
-        updateWaveSpread(initialSpread);
-        updateWaveDuration(`${initialDuration}s`);
-
-        // Add the input event listeners
-        const handleSpreadInput = function (this: HTMLInputElement) {
-            updateWaveSpread(parseInt(this.value));
-        };
-        const handleDurationInput = function (this: HTMLInputElement) {
-            setDurationValue(parseFloat(this.value));
-            updateWaveDuration(`${this.value}s`);
-        };
-
-
-        waveSpreadInput.addEventListener('input', handleSpreadInput);
-        waveDurationInput.addEventListener('input', handleDurationInput);
-
-        return () => {
-            waveSpreadInput.removeEventListener('input', handleSpreadInput);
-            waveDurationInput.removeEventListener('input', handleDurationInput);
-        };
-    }, [updateWaveDuration, updateWaveSpread, updateDelayMultiplier]);
-
+    const handleDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newDuration = parseFloat(e.target.value);
+        setWaveDuration(newDuration);
+        updateWaveDuration(`${newDuration}s`);
+    };
 
     return (
         <div className={styles.controls}>
@@ -63,10 +55,10 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange, defaultWaveSpee
                     min={0.1}
                     max={3}
                     step={0.1}
-                    defaultValue={1}
-                    ref={waveDurationInputRef}
+                    value={waveDuration}
+                    onChange={handleDurationChange}
                 />
-                <span id="wave-duration-value">{durationValue.toFixed(1)}</span>
+                <span id="wave-duration-value">{waveDuration.toFixed(1)}</span>
             </div>
             <div className={styles.controlGroup}>
                 <label htmlFor="wave-spread">Wave Spread:</label>
@@ -76,8 +68,8 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange, defaultWaveSpee
                     min="5"
                     max="45"
                     step="5"
-                    defaultValue="30"
-                    ref={waveSpreadInputRef}
+                    value={waveSpread}
+                    onChange={handleSpreadChange}
                 />
             </div>
             <div className={styles.controlGroup}>
@@ -88,9 +80,20 @@ export const Controls: FC<ControlsProps> = ({ onWaveSpeedChange, defaultWaveSpee
                     min={WAVE_SPEED.MIN_SPEED}
                     max={WAVE_SPEED.MAX_SPEED}
                     step={0.001}
-                    defaultValue={defaultWaveSpeed}
+                    defaultValue={WAVE_SPEED.DEFAULT_WAVE_SPEED}
                     // Cool: lift wave-delay value up to a common ancestor
                     onChange={(e) => onWaveSpeedChange(Number(e.target.value))}
+                />
+            </div>
+            <div className={styles.controlGroup}>
+                <label htmlFor="color-picker">Color:</label>
+                <input
+                    type="color"
+                    className="form-control form-control-color"
+                    id="color-picker"
+                    title="Choose your color"
+                    value={selectedColor}
+                    onChange={handleColorChange}
                 />
             </div>
         </div>

@@ -24,6 +24,7 @@ export function createStyleElement(cssContent: string, id: string = ''): HTMLSty
         // For modern browsers
         style.textContent = cssContent;
     }
-
+    //TODO: Add ability to change color of waiting wave
+    // and makes all inputs the same length
     return style;
 }
