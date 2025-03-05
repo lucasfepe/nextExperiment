@@ -19,7 +19,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
 }) => {
   return (
     <div
-      className={`${styles.cardContainer}`}
+      className={`${styles.cardContainer} ${isExpanded ? styles.expanded : ""}`}
     >
       <div
         className={`${styles.card} ${isExpanded ? styles.expanded : ""}`}

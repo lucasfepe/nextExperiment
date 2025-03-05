@@ -18,8 +18,9 @@ export const CardFront: React.FC<CardFrontProps> = ({
       src={thumbnailUrl}
       alt="Project Thumbnail"
       className={styles.thumbnail}
-      width={300} // Adjust this value based on your needs
-      height={150} // Adjust this value based on your needs
+      width={1200} // Adjust this value based on your needs
+      height={600} // Adjust this value based on your needs
+      priority
     />
   </div>
 );

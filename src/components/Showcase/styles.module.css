@@ -49,3 +49,7 @@
     z-index: 0;
     perspective: 1000px;
 }
+
+.projectCards.expanded {
+    /* perspective: none; */
+}

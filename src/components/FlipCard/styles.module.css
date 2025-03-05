@@ -1,28 +1,38 @@
 .cardContainer {
-
     margin: 20px;
     cursor: pointer;
     position: relative;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    aspect-ratio:2/1;
 }
 
 .card {
     position: relative;
-    width: 300px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
     z-index: 1;
-    transform-origin: center center;
 }
 
-.card.expanded {
-    width: 800px;
-    height: 500px;
-    transform: rotateY(180deg);
-    z-index: 200;
+.cardFront {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:0;
+    transform: translate(-50%,-50%);
 }
 
-.cardFront,
 .cardBack {
     width: 100%;
     height: 100%;
@@ -34,19 +44,37 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-}
-
-.cardBack {
+    margin:0; 
     transform: rotateY(180deg);
     padding: 40px;
 }
 
+/* Not Cool: The perspective property, like transform, creates a containing block for fixed-position elements. This is a lesser-known but important behavior. */
+.cardContainer.expanded {
+    position: fixed;
+    z-index: 100;
+    transform: translate(var(--x-diff), var(--y-diff));
+    margin: 0px 20px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.card.expanded {
+    width: 90vw;
+    height: 90vh;
+    max-height: 600px;
+    max-width:560px;
+    transform: rotateY(180deg);
+    z-index: 200;
+}
+
 .thumbnail {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display:block;
 }
 
 .cardBack .thumbnail {
@@ -69,8 +97,6 @@
     align-items: center;
     height: 100%;
 }
-
-
 
 .carouselContainer {
     position: relative;
