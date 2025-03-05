@@ -31,38 +31,41 @@ export const Showcase: React.FC = () => {
     }
   };
 
+  const renderCards = () => {
+    return pinnedRepos.map((repo) => (
+      <FlipCard
+        key={repo.name}
+        title={repo.name}
+        shortDescription={repo.description || "No description available"}
+        longDescription={repo.description || "No description available"}
+        thumbnailUrl={
+          repo.openGraphImageUrl || "/default-project-image.jpg"
+        }
+        projectImages={[
+          repo.openGraphImageUrl || "/default-project-image.jpg",
+        ]}
+        features={[]}
+        technologies={repo.languages.nodes.map(
+          (lang: { name: string }) => lang.name
+        )}
+        isExpanded={expandedCard === repo.name}
+        onToggle={() =>
+          handleCardToggle(expandedCard === repo.name ? null : repo.name)
+        }
+      />
+    ));
+  };
+
   return (
     <section className={styles.showcase}>
-      {/* Single overlay for all cards */}
-      {expandedCard && (
-        <div
-          className={styles.overlay}
-          onClick={() => handleCardToggle(null)}
-        />
-      )}
       <div className={styles.projectCards}>
-        {pinnedRepos.map((repo) => (
-          <FlipCard
-            key={repo.name}
-            title={repo.name}
-            shortDescription={repo.description || "No description available"}
-            longDescription={repo.description || "No description available"}
-            thumbnailUrl={
-              repo.openGraphImageUrl || "/default-project-image.jpg"
-            }
-            projectImages={[
-              repo.openGraphImageUrl || "/default-project-image.jpg",
-            ]}
-            features={[]}
-            technologies={repo.languages.nodes.map(
-              (lang: { name: string }) => lang.name
-            )}
-            isExpanded={expandedCard === repo.name}
-            onToggle={() =>
-              handleCardToggle(expandedCard === repo.name ? null : repo.name)
-            }
-          />
-        ))}
+        {expandedCard && (
+          <div
+            className={styles.overlay}
+            onClick={() => handleCardToggle(null)}
+          ></div>
+        )}
+        {renderCards()}
       </div>
     </section>
   );

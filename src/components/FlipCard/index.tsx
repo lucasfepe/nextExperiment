@@ -19,32 +19,28 @@ export const FlipCard: React.FC<FlipCardProps> = ({
 }) => {
   return (
     <div
-      className={`${styles.cardContainer} ${isExpanded ? styles.expanded : ""}`}
+      className={`${styles.cardContainer}`}
     >
       <div
-        className={`${styles.card} ${isExpanded ? styles.flipped : ""}`}
+        className={`${styles.card} ${isExpanded ? styles.expanded : ""}`}
         onClick={onToggle}
       >
-        <div className={styles.cardFront}>
-          <div className={styles.cardContent}>
-            <CardFront
-              title={title}
-              description={shortDescription}
-              thumbnailUrl={thumbnailUrl}
-            />
-          </div>
-        </div>
-        <div className={styles.cardBack}>
-          <div className={styles.cardContent}>
-            <CardBack
-              title={title}
-              description={longDescription}
-              projectImages={projectImages}
-              features={features}
-              technologies={technologies}
-            />
-          </div>
-        </div>
+
+        <CardFront
+          title={title}
+          description={shortDescription}
+          thumbnailUrl={thumbnailUrl}
+        />
+
+
+        <CardBack
+          title={title}
+          description={longDescription}
+          projectImages={projectImages}
+          features={features}
+          technologies={technologies}
+        />
+
       </div>
     </div>
   );
