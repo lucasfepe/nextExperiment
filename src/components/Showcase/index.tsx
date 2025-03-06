@@ -5,6 +5,8 @@ import { FlipCard } from "@/components/FlipCard";
 import { usePinnedRepos } from "./usePinnedRepos";
 import styles from "./styles.module.css";
 
+
+
 export const Showcase: React.FC = () => {
   const { pinnedRepos, isLoading, error } = usePinnedRepos();
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
@@ -103,7 +105,9 @@ export const Showcase: React.FC = () => {
   };
 
   return (
-    <section className={styles.showcase}>
+    <section className={`${styles.showcase} ${
+      expandedCard !== null ? styles.expanded : ""
+    }`}>
       <div
         className={`${styles.projectCards} ${
           expandedCard !== null ? styles.expanded : ""
