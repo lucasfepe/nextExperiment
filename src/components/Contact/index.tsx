@@ -8,7 +8,7 @@ export default function Contact() {
   const { formData, status, handleSubmit, handleInputChange } = useContactForm();
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={`${styles.contact} section`}>
       <h2>Contact Me</h2>
       <div className={styles['form-container']}>
         <ContactForm

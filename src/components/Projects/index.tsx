@@ -7,6 +7,7 @@ import Image from "next/image";
 import styles from './styles.module.css';
 import { SectionArrow } from '@/components/common';
 import { GitContributions } from '../GitContributions';
+import { Showcase } from '@/components/Showcase';
 
 interface Project {
   id: number;
@@ -35,9 +36,10 @@ export default function Projects() {
   return (
     <section id="projects" className={`${styles.projects} section`}>
       <h2>My Projects</h2>
+      <div className={styles.horizontalContainer}>
+        
       <GitContributions />
-      <div className={styles['project-grid']}>
-
+      <Showcase />
       </div>
       <SectionArrow sectionId="projects" />
     </section>

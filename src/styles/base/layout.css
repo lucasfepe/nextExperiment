@@ -1,5 +1,5 @@
 /* styles/base/layout.css */
-section {
+.section {
     padding: 5rem 2rem;
     position: relative;
 }

@@ -23,7 +23,7 @@ export const GitContributions = () => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>GitHub Contribution Activity</h2>
+            <h3 className={styles.title}>GitHub Contribution Activity</h3>
             <HeatmapContainer
                 contributionData={contributionData}
                 dateRange={dateRange}

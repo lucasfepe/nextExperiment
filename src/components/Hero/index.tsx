@@ -19,7 +19,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className={styles.hero}>
+    <section id="home" className={`${styles.hero} section`}>
       <div className="hero-content">
         <h1 ref={titleRef} className={styles['hero-content-title']}>
           Hi, I'm Luke

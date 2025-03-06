@@ -1,3 +1,16 @@
-.projects {}
+.projects {
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
 
 .project-grid {}
+
+.horizontalContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 50px;
+    flex: 1;
+}
