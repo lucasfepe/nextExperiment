@@ -2,10 +2,9 @@
 "use client";
 import React, { useState } from "react";
 import { FlipCard } from "@/components/FlipCard";
+import { Overlay } from "@/components/common/Overlay";
 import { usePinnedRepos } from "./usePinnedRepos";
 import styles from "./styles.module.css";
-
-
 
 export const Showcase: React.FC = () => {
   const { pinnedRepos, isLoading, error } = usePinnedRepos();
@@ -105,22 +104,13 @@ export const Showcase: React.FC = () => {
   };
 
   return (
-    <section className={`${styles.showcase} ${
-      expandedCard !== null ? styles.expanded : ""
-    }`}>
-      <div
-        className={`${styles.projectCards} ${
-          expandedCard !== null ? styles.expanded : ""
-        }`}
-      >
-        {expandedCard && (
-          <div
-            className={styles.overlay}
-            onClick={() => handleCardToggle(null)}
-          ></div>
-        )}
-        {renderCards()}
-      </div>
-    </section>
+    <>
+      <Overlay isVisible={expandedCard !== null} />
+      <section className={styles.showcase}>
+        <div className={styles.projectCards}>
+          {renderCards()}
+        </div>
+      </section>
+    </>
   );
 };

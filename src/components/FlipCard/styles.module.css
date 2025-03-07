@@ -52,12 +52,13 @@
 
 /* Not Cool: The perspective property, like transform, creates a containing block for fixed-position elements. This is a lesser-known but important behavior. */
 .cardContainer.expanded {
-    position: fixed;
-    z-index: 100;
-    transform: translate(var(--x-diff), var(--y-diff));
-    margin: 0px 20px;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    max-height: 600px;
+    max-width: 560px;
+    margin: 0;
+    transform: translate(var(--x-diff, 0), var(--y-diff, 0));
 }
 
 .card.expanded {

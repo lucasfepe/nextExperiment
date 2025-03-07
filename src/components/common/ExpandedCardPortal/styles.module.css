@@ -1,0 +1,18 @@
+/* src/components/common/ExpandedCardPortal/styles.module.css */
+.expandedCardWrapper {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+  .expandedCardWrapper > * {
+    pointer-events: auto;
+  }
+  

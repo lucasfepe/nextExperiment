@@ -32,11 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}
-        {/* <Script
-          src="https://cdn.example.com/script.js"
-          strategy="lazyOnload"
-        /> */}
+      <body className={`${inter.className} antialiased`}>
+        {children}
+        <div id="overlay-root" />
+        <div id="portal-root" />
       </body>
     </html>
   )

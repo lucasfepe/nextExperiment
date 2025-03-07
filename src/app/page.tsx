@@ -7,7 +7,7 @@ import Contact from '@/components/Contact'
 export default function Home() {
 
   return (
-    <main>
+    <main className="main">
       <Navigation />
       <div className="main-container">
         <Hero />

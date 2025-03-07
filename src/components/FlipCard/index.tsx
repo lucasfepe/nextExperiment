@@ -1,7 +1,9 @@
+// src/components/FlipCard/index.tsx
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { CardFront } from "./components/CardFront";
 import { CardBack } from "./components/CardBack";
+import { ExpandedCardPortal } from "@/components/common/ExpandedCardPortal";
 import styles from "./styles.module.css";
 import type { FlipCardProps } from "./types";
 
@@ -13,11 +15,10 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   projectImages,
   features,
   technologies,
-
   isExpanded,
   onToggle,
 }) => {
-  return (
+  const cardContent = (
     <div
       className={`${styles.cardContainer} ${isExpanded ? styles.expanded : ""}`}
     >
@@ -25,14 +26,11 @@ export const FlipCard: React.FC<FlipCardProps> = ({
         className={`${styles.card} ${isExpanded ? styles.expanded : ""}`}
         onClick={onToggle}
       >
-
         <CardFront
           title={title}
           description={shortDescription}
           thumbnailUrl={thumbnailUrl}
         />
-
-
         <CardBack
           title={title}
           description={longDescription}
@@ -40,8 +38,16 @@ export const FlipCard: React.FC<FlipCardProps> = ({
           features={features}
           technologies={technologies}
         />
-
       </div>
     </div>
+  );
+
+  return (
+    <>
+      {!isExpanded && cardContent}
+      <ExpandedCardPortal isExpanded={isExpanded}>
+        {cardContent}
+      </ExpandedCardPortal>
+    </>
   );
 };

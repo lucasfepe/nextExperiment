@@ -11,3 +11,30 @@
     overflow-x: hidden;
     scroll-snap-type: x mandatory;
 }
+
+.overlay {
+    /* Cool: I learned that in order for elements to 
+    be ordered by z-index they need to be in the same 
+    stacking context and in order to do this 
+    (except when that stacking context is the root) 
+    they need to be inside the same parent
+    But! a parent will always be rendered beneath its children
+    so only sibling elements can be ordered by z-index
+    and if one of them has its own stacking context
+    (which they would if you are setting a z-index)
+    then they need to be inside a created stacking context*/
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    width: 2000vw;
+    height: 2000vh;
+    top: -1000px;
+    left: -1000px;
+    z-index: 50;
+}
+
+.main {
+    position: relative;
+    z-index: 10;
+}
