@@ -7,5 +7,6 @@ export interface FlipCardProps {
     features: string[];
     technologies: string[];
     isExpanded: boolean;
-    onToggle: (event: React.MouseEvent<HTMLDivElement>) => void;
+    onToggle: (event: React.MouseEvent<HTMLDivElement> | null) => void;
+    onSetHandleClose?: (handleClose: () => void) => void;
 }

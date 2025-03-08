@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 export const Showcase: React.FC = () => {
   const { pinnedRepos, isLoading, error } = usePinnedRepos();
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
+  const [currentCardHandleClose, setCurrentCardHandleClose] = useState<(() => void) | null>(null);
 
   if (isLoading) {
     return <div className={styles.loading}>Loading projects...</div>;
@@ -32,7 +33,12 @@ export const Showcase: React.FC = () => {
     }
   };
 
-  const handleCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  // const handleClose = () => {
+  //   handleCardToggle(null);
+  // };
+
+  const handleCardClick = (event: React.MouseEvent<HTMLDivElement> | null) => {
+    if (!event) return;
     const cardBack = event.currentTarget.children[1] as HTMLElement;
     const cardFront = event.currentTarget.children[0] as HTMLElement;
     const card = event.currentTarget.parentElement;
@@ -43,18 +49,18 @@ export const Showcase: React.FC = () => {
       // Calculate the center position of the card
       let cardBackCenterX;
       let cardBackCenterY;
-      if(window.innerWidth * .9 > 560){
+      if (window.innerWidth * .9 > 560) {
         cardBackCenterX = rect.left + 560 / 2;
       } else {
         cardBackCenterX = rect.left + window.innerWidth * 0.9 / 2;
       }
-      if(window.innerHeight * .9 > 600){
+      if (window.innerHeight * .9 > 600) {
         console.log("rect.top: " + rect.top);
         cardBackCenterY = rect.top + 600 / 2;
       } else {
         cardBackCenterY = rect.top + window.innerHeight * 0.9 / 2;
       }
-      
+
       const rect2 = cardFront.getBoundingClientRect();
       // Calculate the center position of the card
       const cardFrontCenterY = rect2.top + rect2.height / 2;
@@ -77,9 +83,9 @@ export const Showcase: React.FC = () => {
   const getScreenCenter = (): { x: number; y: number } => {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
-    
+
     return { x: centerX, y: centerY };
-};
+  };
 
   const renderCards = () => {
     return pinnedRepos.map((repo) => (
@@ -95,9 +101,14 @@ export const Showcase: React.FC = () => {
           (lang: { name: string }) => lang.name
         )}
         isExpanded={expandedCard === repo.name}
-        onToggle={(e: React.MouseEvent<HTMLDivElement>) => {
+        onToggle={(e) => {
           handleCardToggle(expandedCard === repo.name ? null : repo.name);
           handleCardClick(e);
+        }}
+        onSetHandleClose={(closeFunc) => {
+          if (repo.name === expandedCard) {
+            setCurrentCardHandleClose(() => closeFunc);
+          }
         }}
       />
     ));
@@ -105,7 +116,14 @@ export const Showcase: React.FC = () => {
 
   return (
     <>
-      <Overlay isVisible={expandedCard !== null} />
+      <Overlay
+        isVisible={expandedCard !== null}
+        onClose={() => {
+          if (currentCardHandleClose) {
+            currentCardHandleClose();
+          }
+        }}
+      />
       <section className={styles.showcase}>
         <div className={styles.projectCards}>
           {renderCards()}

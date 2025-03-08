@@ -1,16 +1,26 @@
 "use client";
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './styles.module.css';
+import { injectOverlayFadeDurationCSSVariables } from './utils';
 
 interface OverlayProps {
   isVisible: boolean;
+  onClose?: () => void;
 }
 
-export const Overlay: React.FC<OverlayProps> = ({ isVisible }) => {
+export const Overlay: React.FC<OverlayProps> = ({ isVisible, onClose }) => {
   if (typeof window === 'undefined') return null;
 
+  useEffect(() => {
+    injectOverlayFadeDurationCSSVariables();
+  }, []);
+
   return createPortal(
-    <div className={`${styles.overlay} ${isVisible ? styles.visible : ''}`} />,
+    <div
+      className={`${styles.overlay} ${isVisible ? styles.visible : ''}`}
+      onClick={onClose}
+    />,
     document.getElementById('overlay-root')!
   );
 };
