@@ -1,4 +1,5 @@
 import { GITHUB_USERNAME } from "@/components/GitContributions/constants";
+import { GitHubGraphQLResponse } from '@/shared/types'
 
 const CACHE_KEY = 'github_pinned_repos';
 const CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -59,14 +60,14 @@ export const getPinnedRepos = async () => {
             throw new Error(`GitHub API error: ${errorData}`);
         }
 
-        const data = await response.json();
-        
+        const data: GitHubGraphQLResponse = await response.json();
+
         if (data.errors) {
             throw new Error(data.errors[0].message);
         }
 
         const repos = data.data.user.pinnedItems.nodes;
-        
+
         // Cache the fresh data
         setCachedData(repos);
 
@@ -85,7 +86,7 @@ function getCachedData(): any | null {
         if (!cached) return null;
 
         const { timestamp, data }: CachedData = JSON.parse(cached);
-        
+
         // Check if cache is expired
         if (Date.now() - timestamp > CACHE_EXPIRY) {
             localStorage.removeItem(CACHE_KEY);
@@ -108,7 +109,7 @@ function setCachedData(data: any): void {
             timestamp: Date.now(),
             data
         };
-        
+
         localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
     } catch (error) {
         console.error('Error setting cache:', error);

@@ -3,8 +3,10 @@ export interface FlipCardProps {
     shortDescription: string;
     longDescription: string;
     thumbnailUrl: string;
+    url: string;
     projectImages: string[];
     features: string[];
+    languages: string[];
     technologies: string[];
     isExpanded: boolean;
     onToggle: (event: React.MouseEvent<HTMLDivElement> | null) => void;

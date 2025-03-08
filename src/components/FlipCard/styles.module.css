@@ -227,6 +227,8 @@
     font-size: 11pt;
     font-style: italic;
     line-height: 19px;
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
 
 .placeholder {

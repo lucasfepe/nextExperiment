@@ -10,7 +10,7 @@ h2 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-top: 60px;
-    padding-top: 60px;
+    /* padding-top: 60px; */
 }
 
 .icon-bold.bi::before {

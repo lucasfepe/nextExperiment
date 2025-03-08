@@ -1,30 +1,39 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import styles from "@/components/FlipCard/styles.module.css";
+import Link from 'next/link'
 
 interface CardBackProps {
   title: string;
   description: string;
+  url: string;
   projectImages: string[];
   features: string[];
   technologies: string[];
+  languages: string[];
 }
 
 export const CardBack: React.FC<CardBackProps> = ({
   title,
   description,
+  url,
   projectImages,
   features,
+  languages,
   technologies,
 }) => (
   <div className={`${styles.cardBack}`}>
     <div className="flex-none">
-      <h2 className="text-xl font-bold mb-2 mt-0">{title}</h2>
+      <h2 className="text-xl font-bold mb-2 mt-0"><Link href={url} passHref legacyBehavior>
+        <a target="_blank">
+          {title}
+        </a>
+      </Link></h2>
       <p className={styles.longDescription}>{description}</p>
     </div>
     <div className={`${styles.backContent} `}>
       <div>
-        <div className="mt-4">
+        <div className="mt-2">
           <h4>Features</h4>
           <ul>
             {features.map((feature, index) => (
@@ -32,8 +41,18 @@ export const CardBack: React.FC<CardBackProps> = ({
             ))}
           </ul>
         </div>
-        <div className="mt-4">
-          <h4>Technologies Used</h4>
+        <div className="mt-2">
+          <h4>Languages</h4>
+          <div className="flex gap-2 flex-wrap">
+            {languages.map((tech, index) => (
+              <span key={index} className={`${styles.techBadge} badge bg-primary`}>
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="mt-2">
+          <h4>Technologies</h4>
           <div className="flex gap-2 flex-wrap">
             {technologies.map((tech, index) => (
               <span key={index} className={`${styles.techBadge} badge bg-primary`}>
@@ -47,8 +66,8 @@ export const CardBack: React.FC<CardBackProps> = ({
       {/* Right Column - Image Carousel */}
       {/* <div className={`h-full ${styles.carouselContainer}`}> */}
       <div className={styles.carouselContainer}>
-        <Carousel 
-          interval={3000} 
+        <Carousel
+          interval={3000}
           className={styles.carousel}
           indicators={true}
         >

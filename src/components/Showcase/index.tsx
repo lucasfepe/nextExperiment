@@ -5,6 +5,7 @@ import { FlipCard } from "@/components/FlipCard";
 import { Overlay } from "@/components/common/Overlay";
 import { usePinnedRepos } from "./usePinnedRepos";
 import styles from "./styles.module.css";
+import { REPOS_DETAILS } from "./constants";
 
 export const Showcase: React.FC = () => {
   const { pinnedRepos, isLoading, error } = usePinnedRepos();
@@ -68,10 +69,7 @@ export const Showcase: React.FC = () => {
       // Calculate the center position of the card
       const cardCenterY = rect3.top + rect3.height / 2;
 
-
-
       // Get location of center of screen in px
-
       // Set these values as CSS custom properties
       // cardBack.style.setProperty("--y-diff", `${screenCenterY - cardBackCenterY}px`);
       // cardBack.style.setProperty("--x-diff", `${screenCenterX - cardBackCenterX}px`);
@@ -92,12 +90,14 @@ export const Showcase: React.FC = () => {
       <FlipCard
         key={repo.name}
         title={repo.name}
+        url={repo.url}
         shortDescription={repo.description || "No description available"}
         longDescription={repo.description || "No description available"}
         thumbnailUrl={repo.openGraphImageUrl || "/default-project-image.jpg"}
         projectImages={[repo.openGraphImageUrl || "/default-project-image.jpg"]}
-        features={[]}
-        technologies={repo.languages.nodes.map(
+        features={REPOS_DETAILS[repo.name].features}
+        technologies={REPOS_DETAILS[repo.name].technologies}
+        languages={repo.languages.nodes.map(
           (lang: { name: string }) => lang.name
         )}
         isExpanded={expandedCard === repo.name}

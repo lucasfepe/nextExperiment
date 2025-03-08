@@ -10,14 +10,15 @@ import { FLIP_CARD_ANIMATION_DURATION } from './constants';
 import { OVERLAY_FADE_DURATION } from "../common/Overlay/constants";
 import { injectFlipCardCSSVariables } from "./utils";
 
-
 export const FlipCard: React.FC<FlipCardProps> = ({
   title,
   shortDescription,
   longDescription,
+  url,
   thumbnailUrl,
   projectImages,
   features,
+  languages,
   technologies,
   isExpanded,
   onToggle,
@@ -135,9 +136,11 @@ export const FlipCard: React.FC<FlipCardProps> = ({
         />
         <CardBack
           title={title}
+          url={url}
           description={longDescription}
           projectImages={projectImages}
           features={features}
+          languages={languages}
           technologies={technologies}
         />
       </div>
