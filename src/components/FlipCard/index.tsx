@@ -9,7 +9,7 @@ import type { FlipCardProps } from "./types";
 import { FLIP_CARD_ANIMATION_DURATION } from './constants';
 import { OVERLAY_FADE_DURATION } from "../common/Overlay/constants";
 import { injectFlipCardCSSVariables } from "./utils";
-
+const skd = 1;
 export const FlipCard: React.FC<FlipCardProps> = ({
   title,
   shortDescription,
