@@ -6,4 +6,4 @@
 // excessive time spent optimizing for programming principles.
 
 export const SECTION_ORDER = ['hero', 'about', 'projects', 'contact'];
-export const hihi = 2;
+export const hihi = 4;
