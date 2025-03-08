@@ -10,6 +10,7 @@ import { FLIP_CARD_ANIMATION_DURATION } from './constants';
 import { OVERLAY_FADE_DURATION } from "../common/Overlay/constants";
 import { injectFlipCardCSSVariables } from "./utils";
 
+
 export const FlipCard: React.FC<FlipCardProps> = ({
   title,
   shortDescription,
@@ -31,6 +32,11 @@ export const FlipCard: React.FC<FlipCardProps> = ({
 
   const handleInitialFlip = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isExpanded && cardRef.current) {
+      // Find the showcase container
+      const showcaseElement = cardRef.current.closest(`[data-showcase-class]`);
+      console.log('styles.hideOverflow:', styles.hideOverflow);
+      showcaseElement?.classList.add(styles.hideOverflow);
+
       const rect = cardRef.current.getBoundingClientRect();
       setInitialRect(rect);
       onToggle(e);
@@ -63,6 +69,10 @@ export const FlipCard: React.FC<FlipCardProps> = ({
       setTimeout(() => {
         setIsClosing(false);
         setShouldRenderInPortal(false);
+
+        // Remove the hideOverflow class after animation completes
+        const showcaseElement = cardRef.current?.closest(`[data-showcase-class]`);
+        showcaseElement?.classList.remove(styles.hideOverflow);
       }, OVERLAY_FADE_DURATION);
     }, (FLIP_CARD_ANIMATION_DURATION));
   };

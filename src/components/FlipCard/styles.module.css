@@ -232,3 +232,7 @@
 .placeholder {
     visibility: hidden
 }
+
+.hideOverflow {
+    overflow: hidden !important;
+}
