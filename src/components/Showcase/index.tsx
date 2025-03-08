@@ -62,13 +62,6 @@ export const Showcase: React.FC = () => {
         cardBackCenterY = rect.top + window.innerHeight * 0.9 / 2;
       }
 
-      const rect2 = cardFront.getBoundingClientRect();
-      // Calculate the center position of the card
-      const cardFrontCenterY = rect2.top + rect2.height / 2;
-      const rect3 = card.getBoundingClientRect();
-      // Calculate the center position of the card
-      const cardCenterY = rect3.top + rect3.height / 2;
-
       // Get location of center of screen in px
       // Set these values as CSS custom properties
       // cardBack.style.setProperty("--y-diff", `${screenCenterY - cardBackCenterY}px`);

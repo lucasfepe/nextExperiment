@@ -2,7 +2,7 @@ import {
     getPinnedRepos
 } from '@/components/GitContributions/utils'
 import { useState, useEffect } from 'react';
-import { GitHubGraphQLResponse, PinnedRepo } from '@/shared/types'
+import { PinnedRepo } from '@/shared/types'
 
 export const usePinnedRepos = () => {
     const [pinnedRepos, setPinnedRepos] = useState<PinnedRepo[]>([]);

@@ -1,19 +1,9 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
-import Image from "next/image";
+import { useRef, useEffect } from 'react'
 import styles from './styles.module.css';
 import { SectionArrow } from '@/components/common';
 import { GitContributions } from '../GitContributions';
 import { Showcase } from '@/components/Showcase';
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  link: string;
-}
 
 export default function Projects() {
   const h2Ref = useRef<HTMLHeadingElement>(null);
@@ -25,7 +15,7 @@ export default function Projects() {
       const height = el.offsetHeight +
         parseInt(styles.marginTop) +
         parseInt(styles.marginBottom);
-      
+
       document.documentElement.style.setProperty('--h2-total-height', `${height}px`);
     }
   }, []);

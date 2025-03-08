@@ -1,12 +1,12 @@
 import { GITHUB_USERNAME } from "@/components/GitContributions/constants";
-import { GitHubGraphQLResponse } from '@/shared/types'
+import { GitHubGraphQLResponse, PinnedRepo } from '@/shared/types'
 
 const CACHE_KEY = 'github_pinned_repos';
 const CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 interface CachedData {
     timestamp: number;
-    data: any;
+    data: PinnedRepo[];
 }
 
 export const getPinnedRepos = async () => {
@@ -77,7 +77,7 @@ export const getPinnedRepos = async () => {
     }
 };
 
-function getCachedData(): any | null {
+function getCachedData(): PinnedRepo[] | null {
     try {
         // Only run in browser environment
         if (typeof window === 'undefined') return null;
@@ -100,7 +100,7 @@ function getCachedData(): any | null {
     }
 }
 
-function setCachedData(data: any): void {
+function setCachedData(data: PinnedRepo[]): void {
     try {
         // Only run in browser environment
         if (typeof window === 'undefined') return;

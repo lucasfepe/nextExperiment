@@ -9,9 +9,7 @@ interface CardFrontProps {
 }
 
 export const CardFront: React.FC<CardFrontProps> = ({
-  title,
-  description,
-  thumbnailUrl,
+  thumbnailUrl
 }) => (
   <div className={styles.cardFront}>
     <Image

@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import styles from "@/components/FlipCard/styles.module.css";
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface CardBackProps {
   title: string;
@@ -73,9 +74,11 @@ export const CardBack: React.FC<CardBackProps> = ({
         >
           {projectImages.map((image, index) => (
             <Carousel.Item key={index} className={styles.carouselItem}>
-              <img
+              <Image
                 src={image}
                 alt={`Project screenshot ${index + 1}`}
+                width={500}
+                height={500}
                 className={styles.carouselImage}
               />
             </Carousel.Item>

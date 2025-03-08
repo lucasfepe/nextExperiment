@@ -10,7 +10,6 @@ interface OverlayProps {
 }
 
 export const Overlay: React.FC<OverlayProps> = ({ isVisible, onClose }) => {
-  if (typeof window === 'undefined') return null;
 
   useEffect(() => {
     injectOverlayFadeDurationCSSVariables();

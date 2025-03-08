@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import {
     getContributionData
 } from '@/components/GitContributions/utils'
@@ -8,7 +8,6 @@ let contributionDataPromise: Promise<Map<string, number>> | null = null;
 
 export const useGithubContributions = () => {
     const [contributionData, setContributionData] = useState<Map<string, number>>(new Map());
-    const [pinnedRepos, setPinnedRepos] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
 
@@ -50,5 +49,5 @@ export const useGithubContributions = () => {
         };
     }, []);
 
-    return { contributionData, pinnedRepos, isLoading, error };
+    return { contributionData, isLoading, error };
 };
