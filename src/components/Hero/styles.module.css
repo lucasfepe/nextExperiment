@@ -25,7 +25,7 @@
     transition: all 0.8s ease-in-out;
     animation-duration: 2s;
     animation-iteration-count:infinite;
-
+    animation-delay: 3s;
     & :global {
         animation-name: bounce;
     }
@@ -45,6 +45,6 @@
 }
 
 .scroll-indicator button:hover i {
-    color: var(--primary-color);
+    color: var(--accent-color);
     transform: translateY(5px);
 }
