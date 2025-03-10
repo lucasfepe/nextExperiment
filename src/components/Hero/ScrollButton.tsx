@@ -1,6 +1,7 @@
 'use client';
-import { forwardRef } from 'react';
+import { forwardRef, useRef, useEffect } from 'react';
 import styles from './styles.module.css';
+import { fadeUpAnimation } from '@/shared/animations';
 
 interface ScrollButtonProps {
   onClick: () => void;
@@ -8,8 +9,12 @@ interface ScrollButtonProps {
 
 export const ScrollButton = forwardRef<HTMLButtonElement, ScrollButtonProps>(
   (props, ref) => {
+    const downArrowRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+      fadeUpAnimation(downArrowRef.current, 1500)
+    }, [])
     return (
-      <div className={styles['scroll-indicator']}>
+      <div ref={downArrowRef} className={styles['scroll-indicator']}>
         <button
           ref={ref}
           onClick={props.onClick}
