@@ -5,7 +5,7 @@
     flex-direction: column;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.8s ease-in-out, color none;
+    transition: all 0.8s ease-in-out;
 }
 
 .about h2 {
