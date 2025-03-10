@@ -70,7 +70,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
       setTimeout(() => {
         setIsClosing(false);
         setShouldRenderInPortal(false);
-
+        const a = 1;
         // Remove the hideOverflow class after animation completes
         const showcaseElement = cardRef.current?.closest(`[data-showcase-class]`);
         showcaseElement?.classList.remove(styles.hideOverflow);
