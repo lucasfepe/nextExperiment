@@ -7,8 +7,6 @@
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-
-
 .about h2 {
     text-align: center;
     flex-shrink: 0;
