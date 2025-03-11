@@ -27,3 +27,10 @@
 .side-scroll-arrow svg {
     color: white;
 }
+
+@media (max-width: 945px) {
+    .side-scroll-arrow {
+        display:none;
+    }
+}
+

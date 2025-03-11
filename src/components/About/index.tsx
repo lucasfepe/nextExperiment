@@ -22,8 +22,8 @@ export default function About() {
                   />
                 </div>
               </div>
-
-              <div className="col-lg-6">
+              <div className="col-sm-1 col-md-2 d-lg-none"></div>
+              <div className="col-lg-6 col-md-8 col-sm-10">
                 <p className="p1">
                   Lucas Ferrari Pereira is a software developer with experience
                   in QA engineering and full-stack development. He has worked at
@@ -36,6 +36,7 @@ export default function About() {
                   collaborative mindset to every project.
                 </p>
               </div>
+              <div className="col-sm-1 col-md-2 d-lg-none"></div>
             </div>
           </div>
         </div>

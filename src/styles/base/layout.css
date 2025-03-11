@@ -12,6 +12,13 @@
     scroll-snap-type: x mandatory;
 }
 
+@media (max-width: 945px) {
+    .horizontal-container {
+        flex-direction: column;
+        width: 100vw;
+    }
+}
+
 .overlay {
     /* Cool: I learned that in order for elements to 
     be ordered by z-index they need to be in the same 
