@@ -1,24 +1,20 @@
-/* About Section */
 .about {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
+
+
 .about h2 {
-    /* Position the title independently */
-    /* margin-top: 4rem; */
-    /* margin-bottom: 0; */
     text-align: center;
     flex-shrink: 0;
-    /* Prevents the title from shrinking */
 }
 
 .about .container {
-    /* Take remaining height after h2 */
     height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
@@ -38,7 +34,6 @@
 
 .about-content p {
     font-size: 1.1rem;
-    /* margin-bottom: 1.5rem; */
     text-align: justify;
     hyphens: auto;
     line-height: 1.8;
@@ -81,7 +76,6 @@
     flex-direction: column;
 }
 
-/* For the text column */
 .col-lg-6:last-child {
     display: flex;
     flex-direction: column;
@@ -90,14 +84,12 @@
 
 .col-lg-6:last-child p {
     margin: 0.5rem 0;
-    /* Adjust spacing between paragraphs as needed */
 }
 
 .about-content .row {
     position: relative;
 }
 
-/* Image column */
 .col-lg-6:first-child {
     display: flex;
     align-items: center;
@@ -108,7 +100,6 @@
     width: auto;
 }
 
-/* Text column - this will determine the height */
 .col-lg-6:last-child {
     display: flex;
     flex-direction: column;

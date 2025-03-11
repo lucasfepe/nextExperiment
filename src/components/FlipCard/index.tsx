@@ -35,7 +35,6 @@ export const FlipCard: React.FC<FlipCardProps> = ({
     if (!isExpanded && cardRef.current) {
       // Find the showcase container
       const showcaseElement = cardRef.current.closest(`[data-showcase-class]`);
-      console.log('styles.hideOverflow:', styles.hideOverflow);
       showcaseElement?.classList.add(styles.hideOverflow);
 
       const rect = cardRef.current.getBoundingClientRect();
@@ -55,8 +54,11 @@ export const FlipCard: React.FC<FlipCardProps> = ({
     // to handleInitialFlip but this didn't work because the rectangle isn't fully expanded
     // by the time the initialFlip begins so it resulted in the shrinking animation actually startoing
     // at the shrunk position
+    
     if (cardRef.current) {
       setExpandedRect(cardRef.current.getBoundingClientRect());
+      const showcaseElement = document.getElementById("showcase");
+      showcaseElement?.classList.remove(styles.hideOverflow);
     }
     setIsClosing(true);
 

@@ -44,5 +44,16 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "GitHub API",
             "Husky"
         ]
-    }
+    },
+    "Divine": {
+    "features": [
+        "Hundreds of scripts utilizing OOP principles",
+        "Implementation of design patterns",
+        "Scalable, maintainable, and reusable architecture"
+    ],
+    "technologies": [
+        "DOTween",
+        "Unity"
+    ]
+}
 }

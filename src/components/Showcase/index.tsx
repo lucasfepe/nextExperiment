@@ -117,7 +117,7 @@ export const Showcase: React.FC = () => {
           }
         }}
       />
-      <section className={styles.showcase} data-showcase-class={styles.showcase}>
+      <section id="showcase" className={styles.showcase} data-showcase-class={styles.showcase}>
         <div className={styles.projectCards}>
           {renderCards()}
         </div>
