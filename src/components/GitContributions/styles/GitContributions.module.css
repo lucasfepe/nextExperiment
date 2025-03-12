@@ -36,6 +36,11 @@
         width: 100%;
     }
 }
+@media (max-width: 800px){
+    .container {
+        margin: auto;
+    }
+}
 @media (max-width: 440px){
     .container {
         margin: 0;

@@ -86,6 +86,11 @@
     opacity: 1;
 }
 
+@media (max-width: 800px){
+    .contact {
+        padding-top: 5rem;
+    }
+}
 @media (max-width: 440px){
     .contact {
         padding-top: 0;

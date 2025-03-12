@@ -241,8 +241,22 @@
 
 @media (max-width: 945px){
     .cardContainer {
-        margin: 1rem;
         width:auto;
+        margin: 1rem 0.5rem;
+    }
+    
+}
+@media (max-width: 875px){
+    .cardContainer {
+        margin: 1rem 0.3rem;
+        max-width: 415px;
+    }
+    
+}
+@media (max-width: 800px){
+    .cardContainer {
+        margin: auto;
+        margin-top: 2rem;
     }
 }
 

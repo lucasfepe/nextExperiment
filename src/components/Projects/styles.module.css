@@ -28,14 +28,16 @@
     }
     .projects {
         padding: 0;
-        padding-top: 10rem;
+        padding-top: 5rem;
+        margin-top: 3rem;
         height: auto;
     }
 }
 @media (max-width: 440px){
     .projects {
         display: block;
-        padding-top: 10rem;
+        padding-top: 5rem;
+        margin-top: 3rem;
         padding-left: 0;
         padding-right: 0;
     }

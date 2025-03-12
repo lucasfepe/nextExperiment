@@ -20,4 +20,7 @@ TO DO
 
 - refactor Flipcard, Showcase, Projects make more concise
 - enhance hamburger menu show with slide animation
+- fix card animation setting place
+- images
+- change scroll direction to sideways
 

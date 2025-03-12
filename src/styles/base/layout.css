@@ -17,6 +17,7 @@
         flex-direction: column;
         width: 100vw;
     }
+    
 }
 
 @media (max-width: 440px) {
@@ -52,3 +53,4 @@
     position: relative;
     z-index: 10;
 }
+
