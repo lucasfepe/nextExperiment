@@ -19,5 +19,5 @@ In Progress
 TO DO
 
 - refactor Flipcard, Showcase, Projects make more concise
-- FIX HAMBURGER
+- enhance hamburger menu show with slide animation
 

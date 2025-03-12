@@ -25,7 +25,7 @@ export const CardBack: React.FC<CardBackProps> = ({
 }) => (
   <div className={`${styles.cardBack}`}>
     <div className="flex-none">
-      <h2 className="text-xl font-bold mb-2 mt-0"><Link href={url} passHref legacyBehavior>
+      <h2 className={`text-xl font-bold mb-2 mt-0 ${styles.repoTitle}`}><Link href={url} passHref legacyBehavior>
         <a target="_blank">
           {title}
         </a>

@@ -123,12 +123,28 @@
         margin-top:2rem;
     }
 }
+@media (max-width: 440px){
+    .about .title {
+        margin-bottom: 0;
+    }
+    .about .container {
+        display: block;
+    }
+    .about {
+        display: block;
+        height:auto;
+    }
+}
 @media (max-width: 430px){
     .about-image img{
         width: 100%;
         height: auto;
     }
+    .about .container {
+        margin-top:0rem;
+    }
 }
+
 @media (max-width: 330px){
     .about-image {
         padding: 0;

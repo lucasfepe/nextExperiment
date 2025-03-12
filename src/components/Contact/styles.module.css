@@ -85,3 +85,9 @@
 .emailError {
     opacity: 1;
 }
+
+@media (max-width: 440px){
+    .contact {
+        padding-top: 0;
+    }
+}

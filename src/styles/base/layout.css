@@ -19,6 +19,13 @@
     }
 }
 
+@media (max-width: 440px) {
+    .horizontal-container {
+        display: block;
+    }
+
+}
+
 .overlay {
     /* Cool: I learned that in order for elements to 
     be ordered by z-index they need to be in the same 

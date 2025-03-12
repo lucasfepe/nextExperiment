@@ -17,3 +17,15 @@
 #about {
     height: 100vh;
 }
+
+@media (max-width: 440px) {
+
+    #about,
+    #projects,
+    #contact {
+        width: auto;
+        min-height: auto;
+        height: auto;
+        
+    }
+}

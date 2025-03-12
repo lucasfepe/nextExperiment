@@ -56,3 +56,17 @@
 .projectCards.expanded {
     /* perspective: none; */
 }
+
+@media (max-width: 945px){
+    .showcase {
+        width: 100%;
+        max-width:none;
+        margin: 0;
+        height: auto;
+        padding: 0;
+    }
+    .projectCards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

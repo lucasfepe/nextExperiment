@@ -30,3 +30,21 @@
 .legendPlaceholder {
     height: 19.188px;
 }
+
+@media (max-width: 945px){
+    .container {
+        width: 100%;
+    }
+}
+@media (max-width: 440px){
+    .container {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+        
+    }
+    .heatmapWrapper {
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+}

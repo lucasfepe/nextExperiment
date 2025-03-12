@@ -238,3 +238,25 @@
 .hideOverflow {
     overflow: hidden !important;
 }
+
+@media (max-width: 945px){
+    .cardContainer {
+        margin: 1rem;
+        width:auto;
+    }
+}
+
+@media (max-width: 440px){
+    .repoTitle {
+        font-size: 2rem;
+        
+    }
+    .cardBack {
+        padding: 1.5rem;
+        overflow: auto;
+    }
+    .backContent {
+        grid-template-columns: 1fr;
+    }
+   
+}
