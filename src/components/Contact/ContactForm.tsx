@@ -1,6 +1,9 @@
+'use client'
 
 import styles from './styles.module.css';
 import { ContactFormHookReturn } from '@/components/Contact/hooks';
+import { useState, useRef, useEffect } from 'react';
+import Alert from 'react-bootstrap/Alert';
 
 type ContactFormProps = ContactFormHookReturn;
 
@@ -10,12 +13,51 @@ export const ContactForm = ({
     handleSubmit,
     handleInputChange
 }: ContactFormProps) => {
+    const [errors, setErrors] = useState({
+        email: ''
+    });
+    const emailErrorRef = useRef<HTMLDivElement>(null);
 
+    const validateForm = () => {
+        const newErrors = { email: '' };
+        if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Email is invalid';
+        } else {
+            newErrors.email = '';
+        }
+        setErrors(newErrors);
+        return !newErrors.email;
+    };
+    useEffect(() => {
+        if (errors.email !== '') {
+            triggerEmailError();
+        }
+    }, [errors.email]);
+    
+    const triggerEmailError = () => {
+        if (emailErrorRef.current) {
+            emailErrorRef.current.classList.add(`${styles.emailError}`);
+            setTimeout(() => {
+                emailErrorRef.current!.classList.remove(`${styles.emailError}`);
+            }, 3000);
+            setTimeout(() => {
+                setErrors({ email: '' });
+            }, 4000);
+        }
+    }
 
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validateForm()) {
+            handleSubmit(e);
+        } else {
+
+        }
+    };
 
     return (
         <div className={styles['form-wrapper']}>
-            <form id="contact-form" className={styles.form} onSubmit={handleSubmit}>
+            <form id="contact-form" className={styles.form} onSubmit={handleFormSubmit}>
                 <input
                     id="name"
                     type="text"
@@ -49,6 +91,14 @@ export const ContactForm = ({
                 >
                     {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
+                <Alert 
+                    ref={emailErrorRef}
+                    key={'email'} 
+                    variant={'danger'} 
+                    className={styles.emailInvalid}
+                >
+                    {errors.email}
+                </Alert>
             </form>
 
             <div style={{ height: '60px', marginTop: '1rem' }}>

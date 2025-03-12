@@ -1,7 +1,6 @@
 import { GITHUB_USERNAME } from "@/components/GitContributions/constants";
 import { GitHubGraphQLResponse, PinnedRepo } from '@/shared/types'
-const a = 33;
-console.log(a);
+
 const CACHE_KEY = 'github_pinned_repos';
 const CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 

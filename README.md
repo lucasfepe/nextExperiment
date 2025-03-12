@@ -11,3 +11,13 @@ Welcome to my portfolio! I'm Luke Ferrari, a software developer. This portfolio 
 The project is well-structured with folders for **utils, constants, components, styles, hooks**, and uses **CSS modules** for scoped styling.
 
 [View my Portfolio](https://next-experiment-chi.vercel.app/)
+
+In Progress
+
+- responsive for mobile
+
+TO DO
+
+- refactor Flipcard, Showcase, Projects make more concise
+- FIX HAMBURGER
+

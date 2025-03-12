@@ -73,3 +73,15 @@
     color: var(--text-color);
     margin-top: auto;
 }
+
+.emailInvalid {
+    opacity: 0;
+    transition: opacity .5s ease;
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+.emailError {
+    opacity: 1;
+}
