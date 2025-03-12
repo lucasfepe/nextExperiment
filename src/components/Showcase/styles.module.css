@@ -84,3 +84,8 @@
         justify-content: center;
     }
 }
+@media (max-width: 440px){
+    .showcase {
+       padding: 0 0.75rem;
+    }
+}

@@ -263,7 +263,6 @@
 @media (max-width: 440px){
     .repoTitle {
         font-size: 2rem;
-        
     }
     .cardBack {
         padding: 1.5rem;
@@ -272,5 +271,14 @@
     .backContent {
         grid-template-columns: 1fr;
     }
-   
+}
+@media (max-width: 340px){
+    .repoTitle {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 260px){
+    .repoTitle {
+        font-size: 1.2rem;
+    }
 }
