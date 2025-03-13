@@ -23,4 +23,5 @@ TO DO
 - fix card animation setting place
 - images
 - change scroll direction to sideways
+- color in image
 
