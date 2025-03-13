@@ -34,13 +34,13 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   const handleInitialFlip = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isExpanded && cardRef.current) {
       // Find the showcase container
-      const showcaseElement = cardRef.current.closest(`[data-showcase-class]`);
-      showcaseElement?.classList.add(styles.hideOverflow);
+      
 
       const rect = cardRef.current.getBoundingClientRect();
       setInitialRect(rect);
       onToggle(e);
-
+      const showcaseElement = cardRef.current.closest(`[data-showcase-class]`);
+      showcaseElement?.classList.add(styles.hideOverflow);
       // Capture expanded dimensions after the card is expanded
       setTimeout(() => {
         // wait for portal to be setup before flipping animation starts
