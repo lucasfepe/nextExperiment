@@ -28,9 +28,10 @@ export const Showcase: React.FC = () => {
     setExpandedCard(repoName);
     // When a card is expanded, add class to prevent body scrolling
     if (repoName) {
-      document.body.style.overflow = "hidden";
+      
+      document.getElementById("showcase")!.style.overflow = "hidden";
     } else {
-      // document.body.style.overflow = "auto";
+      document.getElementById("showcase")!.style.overflow = "auto";
     }
   };
 

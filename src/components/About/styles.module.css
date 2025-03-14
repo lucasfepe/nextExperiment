@@ -7,6 +7,17 @@
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
+.about * {
+    /* display: block !important;
+    height: auto !important;
+    position:static !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important; */
+}
+
 .about .title {
     max-width: 650px;
     margin-right: auto;
