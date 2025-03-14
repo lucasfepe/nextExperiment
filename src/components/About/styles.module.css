@@ -7,6 +7,13 @@
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
+.about .title {
+    max-width: 650px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3rem;
+}
+
 .about h2 {
     text-align: center;
     flex-shrink: 0;
@@ -96,6 +103,13 @@
     margin: 0.5rem 0;
 }
 
+@media (max-width: 1200px) {
+    .about .title {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+}
+
 @media (max-width: 991px) {
     .about-content {
         padding-right: 0;
@@ -111,54 +125,72 @@
         padding: 0 1rem;
         margin: 2rem 0;
     }
-}
 
-
-@media (max-width: 830px){
     .about .title {
         margin-top: 0;
     }
+    .about .title {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (max-width: 830px) {
+    .about .title {
+        margin-top: 0;
+    }
+
     .about {
         padding-top: 8rem;
         margin-top: 2rem;
     }
 }
-@media (max-width: 800px){
+
+@media (max-width: 800px) {
     .about .title {
         margin-bottom: -2rem;
     }
 }
+
 @media (max-width: 613px) and (min-width: 576px) {
     .about .container {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
 }
-@media (max-width: 576px){
+
+@media (max-width: 576px) {
     .about {
         margin-top: 0rem;
         padding-top: 8rem;
     }
+
     .about .title {
         margin-bottom: 1rem;
     }
 }
-@media (max-width: 520px){
+
+@media (max-width: 520px) {
     .about .title {
         margin-bottom: 3rem;
     }
 }
-@media (max-width: 470px){
+
+@media (max-width: 470px) {
     .about .container {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
 }
-@media (max-width: 440px){
+
+@media (max-width: 440px) {
     .about .title {
         margin-bottom: -2rem;
     }
+
     .about .container {
         display: block;
     }
+
     .about {
         display: block;
         height: auto;
@@ -167,99 +199,140 @@
         padding-top: 9rem;
     }
 }
-@media (max-width: 432px){
-    .about-image img{
+
+@media (max-width: 432px) {
+    .about-image img {
         width: 100%;
         height: auto;
     }
+
     .about .container {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
+
     .about .title {
         margin-bottom: -3rem;
     }
+
     .about {
         margin-top: -2rem;
     }
 }
-@media (max-width: 425px){
-    .about-image img{
+
+@media (max-width: 425px) {
+    .about-image img {
         width: 100%;
         height: auto;
     }
+
     .about .container {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
+
     .about .title {
         margin-bottom: -3rem;
     }
+
     .about {
         margin-top: -2rem;
         padding-top: 7rem;
     }
 }
-@media (max-width: 418px){
-    .about-image img{
+
+@media (max-width: 418px) {
+    .about-image img {
         width: 100%;
         height: auto;
     }
+
     .about .container {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
+
     .about .title {
         margin-bottom: -3rem;
     }
+
     .about {
         margin-top: -4rem;
         padding-top: 11rem;
     }
 }
-@media (max-width: 413px){
-    .about-image img{
+
+@media (max-width: 413px) {
+    .about-image img {
         width: 100%;
         height: auto;
     }
+
     .about .container {
-        margin-top:2rem;
+        margin-top: 2rem;
     }
+
     .about .title {
         margin-bottom: -3rem;
     }
+
     .about {
         margin-top: -4rem;
     }
 }
 
-@media (max-width: 380px){
+@media (max-width: 380px) {
     .about-image {
         padding: 0;
     }
-    .about-image img{
+
+    .about-image img {
         margin: 0;
     }
+
     .about {
         margin: 0;
         padding: 1.5rem;
         padding-top: 0.5rem;
     }
+
     .about .title {
         margin-top: 7rem;
     }
 }
-@media (max-width: 330px){
+
+@media (max-width: 330px) {
     .about-image {
         padding: 0;
     }
-    .about-image img{
+
+    .about-image img {
         margin: 0;
     }
+
     .about {
         margin: 0;
         padding: 1rem;
     }
+
     .about .title {
         margin-top: 7rem;
     }
 }
 
-
+.highlight {
+    font-size: 1.5rem !important;
+    text-align: start !important;
+    /* font-family: "Roboto Flex", sans-serif; */
+    font-weight: 700;
+    line-height: 2rem !important;
+    /* font-variation-settings:
+    "slnt" -10,
+    "wdth" 300,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 312; */
+}

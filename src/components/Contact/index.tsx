@@ -9,7 +9,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className={`${styles.contact} section`}>
-      <h2>Contact Me</h2>
+      <h2 className={styles.title}>Let’s build something great together.</h2>
       <div className={styles['form-container']}>
         <ContactForm
           formData={formData}

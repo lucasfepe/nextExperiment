@@ -7,7 +7,7 @@ export default function About() {
   return (
     <ScrollAnimationWrapper>
       <section id="about" className={`${styles.about} section`}>
-        <h2 className={styles.title}>About Me</h2>
+        <h2 className={styles.title}>Fusing creativity and strategy to optimize and future-proof your software.</h2>
         <div className={styles.container}>
           <div className={styles["about-content"]}>
             <div className="row">
@@ -24,6 +24,9 @@ export default function About() {
               </div>
               <div className="col-sm-1 col-md-2 d-lg-none"></div>
               <div className="col-lg-6 col-md-8 col-sm-10">
+                {/* <p className={styles.highlight}>
+                  Fusing creativity and strategy to optimize and future-proof your software.
+                </p> */}
                 <p className="p1">
                   Lucas Ferrari Pereira is a software developer with experience
                   in QA engineering and full-stack development. He has worked at

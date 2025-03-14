@@ -7,6 +7,12 @@
     z-index:0;
 }
 
+.projects .title {
+    max-width: 650px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .project-grid {}
 
 .horizontalContainer {
