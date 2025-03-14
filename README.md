@@ -22,4 +22,5 @@ TO DO
 - enhance hamburger menu show with slide animation
 - images
 - color in image
+- Add work history timeline
 
