@@ -38,3 +38,18 @@
     position: relative;
     z-index: 10;
 }
+
+@media (max-width: 945px) {
+    .horizontal-container {
+        flex-direction: column;
+        width: 100vw;
+    }
+    
+}
+
+@media (max-width: 440px) {
+    .horizontal-container {
+        display: block;
+    }
+
+}
