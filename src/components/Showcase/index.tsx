@@ -30,7 +30,7 @@ export const Showcase: React.FC = () => {
     if (repoName) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      // document.body.style.overflow = "auto";
     }
   };
 
