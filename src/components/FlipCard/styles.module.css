@@ -23,23 +23,28 @@
 }
 
 .flipHint {
-        font-family: "Iansui", cursive;
-        font-weight: 700;
-        font-style: normal;
+    font-family: "Iansui", cursive;
+    font-weight: 700;
+    font-style: normal;
     position: absolute;
-    width:100%;
+    width: 100%;
     text-align: center;
-    color: var(--accent-color); 
+    color: var(--accent-color);
     animation: colorChange 2s infinite;
 
 }
 
 @keyframes colorChange {
-    0%, 100% {
-        color: var(--accent-color); /* Start and end with blue */
+
+    0%,
+    100% {
+        color: var(--accent-color);
+        /* Start and end with blue */
     }
+
     50% {
-        color: #333; /* Change to black at the midpoint */
+        color: #333;
+        /* Change to black at the midpoint */
     }
 }
 
@@ -63,7 +68,7 @@
 }
 
 .cardBack {
-    color:#333333;
+    color: #333333;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -263,45 +268,51 @@
     overflow: hidden !important;
 }
 
-@media (max-width: 945px){
+@media (max-width: 945px) {
     .cardContainer {
-        width:auto;
+        width: auto;
         margin: 1rem 0.5rem;
     }
-    
+
 }
-@media (max-width: 875px){
+
+@media (max-width: 875px) {
     .cardContainer {
         margin: 1rem 0.3rem;
         max-width: 415px;
     }
-    
+
 }
-@media (max-width: 800px){
+
+@media (max-width: 800px) {
     .cardContainer {
         margin: auto;
         margin-top: 2rem;
     }
 }
 
-@media (max-width: 440px){
+@media (max-width: 440px) {
     .repoTitle {
         font-size: 2rem;
     }
+
     .cardBack {
         padding: 1.5rem;
         overflow: auto;
     }
+
     .backContent {
         grid-template-columns: 1fr;
     }
 }
-@media (max-width: 340px){
+
+@media (max-width: 340px) {
     .repoTitle {
         font-size: 1.5rem;
     }
 }
-@media (max-width: 260px){
+
+@media (max-width: 260px) {
     .repoTitle {
         font-size: 1.2rem;
     }

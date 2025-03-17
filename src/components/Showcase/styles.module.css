@@ -60,15 +60,19 @@
 @media (max-width: 945px){
     .showcase {
         width: 100%;
-        max-width:none;
+        max-width:auto;
         margin: 0;
         height: auto;
         padding: 0;
+        min-height: auto;
+        max-width: none;
+        min-height: none;
     }
     .projectCards {
         display: grid;
         grid-template-columns: 1fr 1fr;
-
+        width: 100%;
+        max-width: auto;
         
     }
     

@@ -138,7 +138,7 @@
     "YTUC" 312; */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 991px) {
     .about-image {
         margin-bottom: 2rem;
     }

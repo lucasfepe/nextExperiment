@@ -39,10 +39,12 @@
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 945px){
     .horizontalContainer {
         flex-direction: column;
         margin:0;
+        height: auto;
+        
     }
     .projects {
         padding: 0;
