@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Iansui&display=swap');
+
 .cardContainer {
     margin-bottom: 20px;
     cursor: pointer;
@@ -18,6 +20,27 @@
     transition: all var(--flip-card-animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
     z-index: 1;
+}
+
+.flipHint {
+        font-family: "Iansui", cursive;
+        font-weight: 700;
+        font-style: normal;
+    position: absolute;
+    width:100%;
+    text-align: center;
+    color: var(--accent-color); 
+    animation: colorChange 2s infinite;
+
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: var(--accent-color); /* Start and end with blue */
+    }
+    50% {
+        color: #333; /* Change to black at the midpoint */
+    }
 }
 
 .cardFront {

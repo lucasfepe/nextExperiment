@@ -25,6 +25,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   onSetHandleClose
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [hasClicked, setHasClicked] = useState(false);
   const [initialRect, setInitialRect] = useState<DOMRect | null>(null);
   const [expandedRect, setExpandedRect] = useState<DOMRect | null>(null);
   const [isClosing, setIsClosing] = useState(false);
@@ -45,6 +46,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
       setTimeout(() => {
         // wait for portal to be setup before flipping animation starts
         setIsFlipped(true);
+        setHasClicked(true);
       }, 50);
     }
   };
@@ -135,6 +137,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
           title={title}
           description={shortDescription}
           thumbnailUrl={thumbnailUrl}
+          hasClicked={hasClicked}
         />
         <CardBack
           title={title}

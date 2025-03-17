@@ -51,5 +51,8 @@
     .horizontal-container {
         display: block;
     }
+    .section {
+        padding: 4rem 2rem 0 2rem;
+    }
 
 }

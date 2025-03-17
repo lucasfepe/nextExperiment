@@ -8,15 +8,17 @@
 }
 
 .about * {
-    /* display: block !important;
-    height: auto !important;
+        /* display: block !important;
+    height: auto !important; 
     position:static !important;
     top: 0 !important;
     bottom: 0 !important;
     transform: none !important;
     margin: 0 !important;
-    padding: 0 !important; */
+    padding: 0 !important; 
+    min-height: auto !important; */
 }
+
 
 .about .title {
     max-width: 650px;
@@ -114,219 +116,7 @@
     margin: 0.5rem 0;
 }
 
-@media (max-width: 1200px) {
-    .about .title {
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-    }
-}
 
-@media (max-width: 991px) {
-    .about-content {
-        padding-right: 0;
-        padding-left: 0;
-        margin-bottom: 2rem;
-    }
-
-    .about-content .intro {
-        margin-bottom: 0;
-    }
-
-    .about-image {
-        padding: 0 1rem;
-        margin: 2rem 0;
-    }
-
-    .about .title {
-        margin-top: 0;
-    }
-    .about .title {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-}
-
-
-@media (max-width: 830px) {
-    .about .title {
-        margin-top: 0;
-    }
-
-    .about {
-        padding-top: 8rem;
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 800px) {
-    .about .title {
-        margin-bottom: -2rem;
-    }
-}
-
-@media (max-width: 613px) and (min-width: 576px) {
-    .about .container {
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .about {
-        margin-top: 0rem;
-        padding-top: 8rem;
-    }
-
-    .about .title {
-        margin-bottom: 1rem;
-    }
-}
-
-@media (max-width: 520px) {
-    .about .title {
-        margin-bottom: 3rem;
-    }
-}
-
-@media (max-width: 470px) {
-    .about .container {
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 440px) {
-    .about .title {
-        margin-bottom: -2rem;
-    }
-
-    .about .container {
-        display: block;
-    }
-
-    .about {
-        display: block;
-        height: auto;
-        padding-bottom: 0;
-        margin-bottom: -6rem;
-        padding-top: 9rem;
-    }
-}
-
-@media (max-width: 432px) {
-    .about-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .about .container {
-        margin-top: 2rem;
-    }
-
-    .about .title {
-        margin-bottom: -3rem;
-    }
-
-    .about {
-        margin-top: -2rem;
-    }
-}
-
-@media (max-width: 425px) {
-    .about-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .about .container {
-        margin-top: 2rem;
-    }
-
-    .about .title {
-        margin-bottom: -3rem;
-    }
-
-    .about {
-        margin-top: -2rem;
-        padding-top: 7rem;
-    }
-}
-
-@media (max-width: 418px) {
-    .about-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .about .container {
-        margin-top: 2rem;
-    }
-
-    .about .title {
-        margin-bottom: -3rem;
-    }
-
-    .about {
-        margin-top: -4rem;
-        padding-top: 11rem;
-    }
-}
-
-@media (max-width: 413px) {
-    .about-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .about .container {
-        margin-top: 2rem;
-    }
-
-    .about .title {
-        margin-bottom: -3rem;
-    }
-
-    .about {
-        margin-top: -4rem;
-    }
-}
-
-@media (max-width: 380px) {
-    .about-image {
-        padding: 0;
-    }
-
-    .about-image img {
-        margin: 0;
-    }
-
-    .about {
-        margin: 0;
-        padding: 1.5rem;
-        padding-top: 0.5rem;
-    }
-
-    .about .title {
-        margin-top: 7rem;
-    }
-}
-
-@media (max-width: 330px) {
-    .about-image {
-        padding: 0;
-    }
-
-    .about-image img {
-        margin: 0;
-    }
-
-    .about {
-        margin: 0;
-        padding: 1rem;
-    }
-
-    .about .title {
-        margin-top: 7rem;
-    }
-}
 
 .highlight {
     font-size: 1.5rem !important;
@@ -346,4 +136,16 @@
     "YTFI" 738,
     "YTLC" 514,
     "YTUC" 312; */
+}
+
+@media (max-width: 800px) {
+    .about-image {
+        margin-bottom: 2rem;
+    }
+    .about .container {
+        height: auto;
+    }
+    .about {
+        min-height: auto;
+    }
 }

@@ -3,15 +3,18 @@ import React from "react";
 import styles from "@/components/FlipCard/styles.module.css";
 
 interface CardFrontProps {
+  hasClicked: boolean;
   title: string;
   description: string;
   thumbnailUrl: string;
 }
 
 export const CardFront: React.FC<CardFrontProps> = ({
-  thumbnailUrl
+  thumbnailUrl,
+  hasClicked
 }) => (
-  <div className={styles.cardFront}>
+  <div className={`${styles.cardFront}`}>
+    <div className={`${styles.flipHint} ${hasClicked ? 'd-none' : 'd-block'}`}>click to flip</div>
     <Image
       src={thumbnailUrl}
       alt="Project Thumbnail"
