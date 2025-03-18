@@ -6,6 +6,7 @@
 
 #about,
 #projects,
+#workHistory,
 #contact {
     width: 100vw;
     min-height: 100vh;
@@ -22,6 +23,7 @@
 
     #about,
     #projects,
+    #workHistory,
     #contact {
         width: auto;
         min-height: auto;

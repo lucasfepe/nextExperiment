@@ -1,0 +1,156 @@
+.workHistory {
+  /* padding: 2rem; */
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.timelineContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+.timelineItem {
+  min-width: 300px;
+  scroll-snap-align: center;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timelineItem:hover {
+  transform: scale(1.05);
+}
+
+.timelineTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.timelineCompany {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timelineDate {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.timelineDescription {
+  list-style-type: disclosure-closed;
+  list-style-position: inside;
+  list-style-image: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timelineDescription li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1150px) {
+  .timelineContainer {
+    max-width: min(900px, 80%);
+    margin: auto;
+    height: auto;
+    overflow: auto;
+  }
+
+  .timelineContainer::-webkit-scrollbar {
+    width: 10px ;
+  }
+
+  .timelineContainer::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+  }
+
+  .timelineContainer::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--accent-color);
+  }
+}
+
+@media (max-width: 900px) {
+  .timelineContainer {
+    max-width: 90%;
+  }
+}
+@media (max-width: 780px) {
+  .timelineContainer {
+    max-width: 95%;
+  }
+}
+@media (max-width: 750px) {
+  .timelineContainer {
+    margin: 2rem;
+  }
+  .timeline {
+    flex-direction: column;
+  }
+}
+@media (max-width: 450px) {
+  .timelineContainer {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+  }
+  .timelineItem:hover {
+    transform:none;
+  }
+  .timeline {
+    flex-direction: column;
+    padding:0;
+  }
+  .workHistory {
+    padding: 0.75rem;
+  }
+}
+@media (max-width: 350px){
+  .timelineItem {
+    min-width: auto;
+  }
+  .workHistory {
+    padding: 0 0.2rem;
+  }
+}
+
+
+@media (max-width: 410px) {
+  .workHistory .title {
+      font-size: 1.4rem;
+  }
+}
+
+
+@media (max-width: 370px) {
+  .workHistory .title {
+      font-size: 1.2rem;
+  }
+}
+@media (max-width: 320px) {
+  .workHistory .title {
+      font-size: 1.2rem;
+  }
+}

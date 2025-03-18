@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { ContactForm } from './ContactForm';
 import { Footer } from './Footer';
 import { useContactForm } from '@/components/Contact/hooks';
+import { SectionArrowPrevious } from '@/components/common';
 
 export default function Contact() {
   const { formData, status, handleSubmit, handleInputChange } = useContactForm();
@@ -19,6 +20,7 @@ export default function Contact() {
         />
       </div>
       <Footer />
+      <SectionArrowPrevious sectionId="contact"/>
     </section>
   );
 }

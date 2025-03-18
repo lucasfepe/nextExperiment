@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { ScrollAnimationWrapper } from "@/components/common";
-import { SectionArrow } from "@/components/common";
+import { SectionArrowNext } from "@/components/common";
 
 export default function About() {
   return (
@@ -43,7 +43,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <SectionArrow sectionId="about" />
+        <SectionArrowNext sectionId="about" />
       </section>
     </ScrollAnimationWrapper>
   );

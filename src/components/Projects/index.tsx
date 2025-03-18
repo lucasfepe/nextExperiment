@@ -1,7 +1,8 @@
 'use client'
 import { useRef, useEffect } from 'react'
 import styles from './styles.module.css';
-import { SectionArrow } from '@/components/common';
+import { SectionArrowNext } from '@/components/common';
+import { SectionArrowPrevious } from '@/components/common';
 import { GitContributions } from '../GitContributions';
 import { Showcase } from '@/components/Showcase';
 
@@ -27,7 +28,8 @@ export default function Projects() {
         <GitContributions />
         <Showcase />
       </div>
-      <SectionArrow sectionId="projects" />
+      <SectionArrowNext sectionId="projects" />
+      <SectionArrowPrevious sectionId="projects" />
     </section>
   );
 }
