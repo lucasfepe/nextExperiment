@@ -13,6 +13,8 @@ export const ExpandedCardPortal: React.FC<ExpandedCardPortalProps> = ({
 }) => {
   if (typeof window === 'undefined' || !isExpanded) return null;
 
+  
+
   return createPortal(
     <div className={styles.expandedCardWrapper}>
       {children}

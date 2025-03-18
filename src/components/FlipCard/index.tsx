@@ -39,6 +39,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
 
       const rect = cardRef.current.getBoundingClientRect();
       setInitialRect(rect);
+
       onToggle(e);
       const showcaseElement = cardRef.current.closest(`[data-showcase-class]`);
       showcaseElement?.classList.add(styles.hideOverflow);

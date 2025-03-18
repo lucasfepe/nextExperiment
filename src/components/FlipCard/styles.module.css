@@ -107,6 +107,7 @@
     height: var(--expanded-height);
     z-index: 1000;
     animation: shrinkCard var(--flip-card-animation-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    margin-top: 0;
 }
 
 @keyframes expandCard {
