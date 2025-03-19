@@ -23,7 +23,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className={`${styles.projects} section`}>
-      <h2 ref={h2Ref} className={styles.title}>Crafting solutions that drive results.</h2>
+      <h2 ref={h2Ref} className={styles.title}>I do it for fun...</h2>
       <div className={styles.horizontalContainer}>
         <GitContributions />
         <Showcase />
