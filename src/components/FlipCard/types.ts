@@ -4,7 +4,7 @@ export interface FlipCardProps {
     longDescription: string;
     thumbnailUrl: string;
     url: string;
-    projectImages: string[];
+    projectImages?: string[];
     features: string[];
     languages: string[];
     technologies: string[];

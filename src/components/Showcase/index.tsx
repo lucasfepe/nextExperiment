@@ -28,7 +28,7 @@ export const Showcase: React.FC = () => {
     setExpandedCard(repoName);
     // When a card is expanded, add class to prevent body scrolling
     if (repoName) {
-      
+
       document.getElementById("showcase")!.style.overflow = "hidden";
     } else {
       document.getElementById("showcase")!.style.overflow = "auto";
@@ -88,7 +88,7 @@ export const Showcase: React.FC = () => {
         shortDescription={repo.description || "No description available"}
         longDescription={repo.description || "No description available"}
         thumbnailUrl={repo.openGraphImageUrl || "/default-project-image.jpg"}
-        projectImages={[repo.openGraphImageUrl || "/default-project-image.jpg"]}
+        projectImages={REPOS_DETAILS[repo.name].images}
         features={REPOS_DETAILS[repo.name].features}
         technologies={REPOS_DETAILS[repo.name].technologies}
         languages={repo.languages.nodes.map(

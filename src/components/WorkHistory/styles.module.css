@@ -14,6 +14,9 @@
   scroll-snap-type: x mandatory;
   gap: 2rem;
   padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .timeline {
@@ -25,6 +28,7 @@
 
 .timelineItem {
   min-width: 300px;
+  max-width: 300px;
   scroll-snap-align: center;
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);
@@ -72,12 +76,17 @@
   .timelineContainer {
     max-width: min(900px, 80%);
     margin: auto;
-    height: auto;
+    height: 90%;
     overflow: auto;
+    justify-content: flex-start;
+    display: flex;
+
   }
 
+  .timelineItem {}
+
   .timelineContainer::-webkit-scrollbar {
-    width: 10px ;
+    width: 10px;
   }
 
   .timelineContainer::-webkit-scrollbar-track {
@@ -92,45 +101,62 @@
   }
 }
 
+@media (max-width: 1150px) and (max-height: 925px) {
+  .timelineContainer {
+    height: auto;
+    overflow: auto;
+  }
+}
+
 @media (max-width: 900px) {
   .timelineContainer {
     max-width: 90%;
   }
 }
+
 @media (max-width: 780px) {
   .timelineContainer {
     max-width: 95%;
   }
 }
+
 @media (max-width: 750px) {
   .timelineContainer {
     margin: 2rem;
+    justify-content: center;
   }
+
   .timeline {
     flex-direction: column;
   }
 }
+
 @media (max-width: 450px) {
   .timelineContainer {
     margin: auto;
     padding: 0;
     width: 100%;
   }
+
   .timelineItem:hover {
-    transform:none;
+    transform: none;
   }
+
   .timeline {
     flex-direction: column;
-    padding:0;
+    padding: 0;
   }
+
   .workHistory {
     padding: 0.75rem;
   }
 }
-@media (max-width: 350px){
+
+@media (max-width: 350px) {
   .timelineItem {
     min-width: auto;
   }
+
   .workHistory {
     padding: 0 0.2rem;
   }
@@ -139,18 +165,19 @@
 
 @media (max-width: 410px) {
   .workHistory .title {
-      font-size: 1.4rem;
+    font-size: 1.4rem;
   }
 }
 
 
 @media (max-width: 370px) {
   .workHistory .title {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 }
+
 @media (max-width: 320px) {
   .workHistory .title {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 }

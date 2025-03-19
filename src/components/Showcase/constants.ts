@@ -1,6 +1,7 @@
 interface RepoDetail {
     features: string[];
     technologies: string[];
+    images?: string[]
 }
 
 type ReposDetailsType = {
@@ -19,6 +20,14 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "Xsolla",
             "AWS",
             "WebGL"
+        ],
+        "images": [
+            "/assets/images/Celestes/Celestes1.png",
+            "/assets/images/Celestes/Celestes2.png",
+            "/assets/images/Celestes/Celestes3.png",
+            "/assets/images/Celestes/Celestes4.png",
+            "/assets/images/Celestes/Celestes5.png",
+            "/assets/images/Celestes/Celestes6.png"
         ]
     },
     "recorderhero": {
@@ -31,6 +40,9 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "React",
             "SpringBoot",
             "Keycloak"
+        ],
+        "images": [
+            "/assets/images/RH/RH1.jpg"
         ]
     },
     "nextExperiment": {
@@ -46,14 +58,14 @@ export const REPOS_DETAILS: ReposDetailsType = {
         ]
     },
     "Divine": {
-    "features": [
-        "Hundreds of scripts utilizing OOP principles",
-        "Implementation of design patterns",
-        "Scalable, maintainable, and reusable architecture"
-    ],
-    "technologies": [
-        "DOTween",
-        "Unity"
-    ]
-}
+        "features": [
+            "Hundreds of scripts utilizing OOP principles",
+            "Implementation of design patterns",
+            "Scalable, maintainable, and reusable architecture"
+        ],
+        "technologies": [
+            "DOTween",
+            "Unity"
+        ]
+    }
 }
