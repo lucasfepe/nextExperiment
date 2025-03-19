@@ -32,15 +32,18 @@ export const CardBack: React.FC<CardBackProps> = ({
 }) => {
   const [expandedCarousel, setExpandedCarousel] = useState<boolean>(false);
   const [carouselImages, setCarouselImages] = useState<ProcessedImage[]>([]);
+  const [hasClicked, setHasClicked] = useState<boolean>(false);
 
   const handleImageClick = () => {
 
     setExpandedCarousel(true);
+    setHasClicked(true);
   };
 
   const handleClosePortal = () => {
     setExpandedCarousel(false);
-    setCarouselImages([]);
+    //Cool example: gen this which was breaking it but remove then work
+    // setCarouselImages([]);
   };
 
   useEffect(() => {
@@ -49,31 +52,41 @@ export const CardBack: React.FC<CardBackProps> = ({
 
   useEffect(() => {
     if (projectImages) {
-      const processedImages: ProcessedImage[] = projectImages.map((image) => {
-        const img = new window.Image();
-        img.src = image;
+      const processImages = async () => {
+        const processedImages: ProcessedImage[] = await Promise.all(
+          projectImages.map((image) => {
+            return new Promise<ProcessedImage>((resolve) => {
+              const img = new window.Image();
+              img.src = image;
 
-        const maxWidth = window.innerWidth * 0.9;
-        const maxHeight = window.innerHeight * 0.9;
+              img.onload = () => {
+                const maxWidth = window.innerWidth * 0.9;
+                const maxHeight = window.innerHeight * 0.9;
 
-        let width = img.width;
-        let height = img.height;
+                let width = img.width;
+                let height = img.height;
 
-        if (width > maxWidth || height > maxHeight) {
-          const widthRatio = maxWidth / width;
-          const heightRatio = maxHeight / height;
-          const scale = Math.min(widthRatio, heightRatio);
+                if (width > maxWidth || height > maxHeight) {
+                  const widthRatio = maxWidth / width;
+                  const heightRatio = maxHeight / height;
+                  const scale = Math.min(widthRatio, heightRatio);
 
-          width = Math.floor(width * scale);
-          height = Math.floor(height * scale);
-        }
+                  width = Math.floor(width * scale);
+                  height = Math.floor(height * scale);
+                }
 
-        return { src: image, width, height };
-      });
+                resolve({ src: image, width, height });
+              };
+            });
+          })
+        );
 
-      setCarouselImages(processedImages);
+        setCarouselImages(processedImages);
+      };
+
+      processImages();
     }
-  }, [projectImages]);
+  }, []);
 
   return (
     <div className={`${styles.cardBack}`}>
@@ -120,6 +133,7 @@ export const CardBack: React.FC<CardBackProps> = ({
         {/* Right Column - Image Carousel */}
         {projectImages && (
           <div className={styles.carouselContainer}>
+            <div className={`${styles.flipHintBack} ${hasClicked ? 'd-none' : 'd-block'}`}>click to expand</div>
             <Carousel
               interval={3000}
               className={styles.carousel}
@@ -147,7 +161,7 @@ export const CardBack: React.FC<CardBackProps> = ({
       {expandedCarousel && carouselImages.length > 0 && (
         <ExpandedCardPortal isExpanded={true} showCloseButton={true} onClose={() => setExpandedCarousel(false)}>
           <Carousel
-            interval={3000}
+            interval={30000}
             className={styles.carousel}
             indicators={true}
             style={{

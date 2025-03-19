@@ -57,7 +57,6 @@ export const Showcase: React.FC = () => {
         cardBackCenterX = rect.left + window.innerWidth * 0.9 / 2;
       }
       if (window.innerHeight * .9 > 600) {
-        console.log("rect.top: " + rect.top);
         cardBackCenterY = rect.top + 600 / 2;
       } else {
         cardBackCenterY = rect.top + window.innerHeight * 0.9 / 2;
