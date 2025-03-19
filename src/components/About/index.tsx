@@ -7,7 +7,7 @@ export default function About() {
   return (
     <ScrollAnimationWrapper>
       <section id="about" className={`${styles.about} section`}>
-        <h2 className={styles.title}>I like to code.</h2>
+        <h2 className={styles.title}>Fusing creativity and strategy to optimize and future-proof your software.</h2>
         <div className={styles.container}>
           <div className={styles["about-content"]}>
             <div className="row">

@@ -40,7 +40,7 @@ export default function WorkHistory() {
 
   return (
     <section id="workHistory" className={`${styles.workHistory} section`}>
-      <h2 className={styles.title}>...or not!</h2>
+      <h2 className={styles.title}>Experience that fuels innovation and reliability.</h2>
       <div className={styles.timelineContainer}>
         <div className={styles.timeline}>
           {experiences.map((experience, index) => (
