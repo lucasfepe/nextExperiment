@@ -20,6 +20,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   features,
   languages,
   technologies,
+  live,
   isExpanded,
   onToggle,
   onSetHandleClose
@@ -35,7 +36,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   const handleInitialFlip = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isExpanded && cardRef.current) {
       // Find the showcase container
-      
+
 
       const rect = cardRef.current.getBoundingClientRect();
       setInitialRect(rect);
@@ -57,7 +58,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
     // to handleInitialFlip but this didn't work because the rectangle isn't fully expanded
     // by the time the initialFlip begins so it resulted in the shrinking animation actually startoing
     // at the shrunk position
-    
+
     if (cardRef.current) {
       setExpandedRect(cardRef.current.getBoundingClientRect());
       const showcaseElement = document.getElementById("showcase");
@@ -148,6 +149,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
           features={features}
           languages={languages}
           technologies={technologies}
+          live={live}
         />
       </div>
     </div>

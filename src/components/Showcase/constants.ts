@@ -1,7 +1,8 @@
 interface RepoDetail {
     features: string[];
     technologies: string[];
-    images?: string[]
+    images?: string[];
+    live?: string;
 }
 
 type ReposDetailsType = {
@@ -67,5 +68,19 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "DOTween",
             "Unity"
         ]
+    },
+    "lucasferraripereira": {
+        "features": [
+            "Interactive, responsive portfolio",
+            "Seamless navigation"
+        ],
+        "technologies": [
+            "HTML5",
+            "CSS3",
+            "Bootstrap",
+            "Render"
+        ],
+        "live": "https://website-tzf6.onrender.com/"
     }
+
 }

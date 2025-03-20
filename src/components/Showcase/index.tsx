@@ -90,6 +90,7 @@ export const Showcase: React.FC = () => {
         projectImages={REPOS_DETAILS[repo.name].images}
         features={REPOS_DETAILS[repo.name].features}
         technologies={REPOS_DETAILS[repo.name].technologies}
+        live={REPOS_DETAILS[repo.name].live}
         languages={repo.languages.nodes.map(
           (lang: { name: string }) => lang.name
         )}

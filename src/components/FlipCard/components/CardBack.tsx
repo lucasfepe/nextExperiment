@@ -12,6 +12,7 @@ interface CardBackProps {
   projectImages?: string[];
   features: string[];
   technologies: string[];
+  live?: string;
   languages: string[];
 }
 
@@ -27,6 +28,7 @@ export const CardBack: React.FC<CardBackProps> = ({
   url,
   projectImages,
   features,
+  live,
   languages,
   technologies,
 }) => {
@@ -92,7 +94,7 @@ export const CardBack: React.FC<CardBackProps> = ({
     <div className={`${styles.cardBack}`}>
       <div className="flex-none">
         <h2 className={`text-xl font-bold mb-2 mt-0 ${styles.repoTitle}`}>
-          <Link href={url} passHref legacyBehavior>
+          🔗 <Link href={url} passHref legacyBehavior>
             <a target="_blank">{title}</a>
           </Link>
         </h2>
@@ -100,6 +102,9 @@ export const CardBack: React.FC<CardBackProps> = ({
       </div>
       <div className={`${styles.backContent} `}>
         <div>
+          {live && <div>
+            🔗 <a href={live} target="_blank" rel="noopener noreferrer">Visit the live site</a>
+          </div>}
           <div className="mt-2">
             <h4>Features</h4>
             <ul>
