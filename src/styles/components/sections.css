@@ -7,6 +7,7 @@
 #about,
 #projects,
 #workHistory,
+#envirosoftPost,
 #contact {
     width: 100vw;
     min-height: 100vh;
@@ -24,10 +25,11 @@
     #about,
     #projects,
     #workHistory,
+    #envirosoftPost,
     #contact {
         width: auto;
         min-height: auto;
         height: auto;
-        
+
     }
 }

@@ -5,5 +5,4 @@
 // the section order, avoiding the need for complex logic and
 // excessive time spent optimizing for programming principles.
 
-export const SECTION_ORDER = ['hero', 'about', 'projects', 'workHistory', 'contact'];
-export const hihi = 4;
+export const SECTION_ORDER = ['hero', 'about', 'projects', 'workHistory', 'envirosoftPost', 'contact'];

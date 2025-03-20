@@ -1,4 +1,23 @@
-.workHistory {
+.iframeContainer {
+  display: flex;
+  justify-content: center;
+  /* Horizontally center */
+  align-items: center;
+  /* Vertically center */
+  margin: 2rem 0;
+  /* Add some spacing */
+}
+
+.iframe {
+  border: none;
+  /* Remove iframe border */
+  max-width: 100%;
+  /* Ensure responsiveness */
+  max-height: 100%;
+  /* Ensure responsiveness */
+}
+
+.envirosoftPost {
   /* padding: 2rem; */
   overflow: hidden;
 }
@@ -108,13 +127,6 @@
   }
 }
 
-@media (max-height: 925px) {
-  .timelineContainer {
-    height: auto;
-    overflow: auto;
-  }
-}
-
 @media (max-width: 900px) {
   .timelineContainer {
     max-width: 90%;
@@ -127,15 +139,14 @@
   }
 }
 
-@media (max-width: 750px) {
-  .timelineContainer {
-    margin: 2rem;
-    justify-content: center;
+@media (max-width: 768px) {
+  .iframe {
+    width: 100%;
+    /* Make it take full width */
+    height: revert-layer;
+    /* Make it taller (80% of the viewport height) */
   }
 
-  .timeline {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 450px) {
@@ -154,7 +165,7 @@
     padding: 0;
   }
 
-  .workHistory {
+  .envirosoftPost {
     padding: 0.75rem;
   }
 }
@@ -164,27 +175,45 @@
     min-width: auto;
   }
 
-  .workHistory {
+  .envirosoftPost {
     padding: 0 0.2rem;
   }
 }
 
 
 @media (max-width: 410px) {
-  .workHistory .title {
+  .envirosoftPost .title {
     font-size: 1.4rem;
   }
 }
 
 
 @media (max-width: 370px) {
-  .workHistory .title {
+  .envirosoftPost .title {
     font-size: 1.2rem;
   }
 }
 
 @media (max-width: 320px) {
-  .workHistory .title {
+  .envirosoftPost .title {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-height: 800px) and (min-width: 875px) {
+  .iframe {
+    height: 550px;
+  }
+}
+
+@media (max-height: 740px) and (min-width: 875px) {
+  .iframe {
+    height: 500px;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 875px) {
+  .iframe {
+    height: 450px;
   }
 }

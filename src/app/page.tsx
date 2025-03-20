@@ -4,6 +4,7 @@ import About from '@/components/About'
 import Projects from '@/components/Projects'
 import WorkHistory from '@/components/WorkHistory'
 import Contact from '@/components/Contact'
+import EnvirosoftPost from '@/components/EnvirosoftPost'
 
 export default function Home() {
 
@@ -16,6 +17,7 @@ export default function Home() {
           <About />
           <Projects />
           <WorkHistory />
+          <EnvirosoftPost />
           <Contact />
         </div>
       </div>
