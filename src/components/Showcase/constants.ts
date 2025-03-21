@@ -81,6 +81,23 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "Render"
         ],
         "live": "https://website-tzf6.onrender.com/"
+    },
+    "AWS_IAC_Celestes": {
+        "features": [
+            "Serverless backend with AWS SAM",
+            "Reusable Lambda Layers",
+            "Secure authentication via Cognito"
+        ],
+        "technologies": [
+            "AWS Lambda",
+            "AWS SAM",
+            "AWS DynamoDB",
+            "AWS Cognito",
+            "AWS IAM",
+            "Lambda Layers",
+            "SSM Parameter Store"
+        ]
     }
+
 
 }
