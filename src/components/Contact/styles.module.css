@@ -9,7 +9,7 @@
 }
 
 .contact .title {
-    margin-right:auto;
+    margin-right: auto;
     margin-left: auto;
     padding: 0 .75rem;
 }
@@ -93,36 +93,37 @@
     opacity: 1;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
     .contact {
         padding-top: 5rem;
     }
 }
-@media (max-width: 440px){
+
+@media (max-width: 440px) {
     .contact {
         margin-top: 2rem;
     }
 }
-@media (max-width: 440px){
-    .contact {
-        
-    }
+
+@media (max-width: 440px) {
+    .contact {}
 }
 
 @media (max-width: 410px) {
     .contact .title {
         font-size: 1.4rem;
     }
-  }
-  
-  
-  @media (max-width: 370px) {
+}
+
+
+@media (max-width: 370px) {
     .contact .title {
         font-size: 1.2rem;
     }
-  }
-  @media (max-width: 320px) {
+}
+
+@media (max-width: 320px) {
     .contact .title {
         font-size: 1.2rem;
     }
-  }
+}

@@ -195,13 +195,21 @@
     height: 300px;
 }
 
+
 .backContent {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     padding: 5px;
     flex-grow: 1;
+}
 
+.fullWidthContent {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    display: grid;
+    padding: 5px;
+    flex-grow: 1;
 }
 
 .carouselContainer {

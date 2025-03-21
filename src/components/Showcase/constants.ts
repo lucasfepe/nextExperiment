@@ -3,6 +3,7 @@ interface RepoDetail {
     technologies: string[];
     images?: string[];
     live?: string;
+    languages?: string[];
 }
 
 type ReposDetailsType = {
@@ -46,47 +47,60 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "/assets/images/RH/RH1.jpg"
         ]
     },
+
     "nextExperiment": {
         "features": [
-            "Portal-based card animations",
-            "Custom React hooks",
-            "Stacking context-aware animation layers"
+            "Engaging portal-based card animations for dynamic user interaction",
+            "Custom React hooks that streamline component behavior",
+            "Layered, stacking-context-sensitive animations for enhanced UI fluidity"
         ],
         "technologies": [
             "Next.js",
-            "GitHub API",
-            "Husky"
+            "GitHub REST API",
+            "GitHub GraphQL API",
+            "Husky",
+            "Prettier"
         ]
     },
     "Divine": {
         "features": [
-            "Hundreds of scripts utilizing OOP principles",
-            "Implementation of design patterns",
-            "Scalable, maintainable, and reusable architecture"
+            "Hundreds of scripts employing robust OOP principles",
+            "Seamless implementation of design patterns for scalability",
+            "Architected for performance: reusable, maintainable code"
         ],
         "technologies": [
+            "Unity Services",
+            "Xsolla",
             "DOTween",
-            "Unity"
+            "AWS API",
+            "AWS SDK .NET"
         ]
     },
     "lucasferraripereira": {
         "features": [
-            "Interactive, responsive portfolio",
-            "Seamless navigation"
+            "Fully responsive design for flawless mobile and desktop views",
+            "Interactive, creative portfolio",
+            "Sleek Bootstrap carousel for captivating art display",
+            "JS-driven email masking"
         ],
         "technologies": [
+            "JS",
             "HTML5",
             "CSS3",
             "Bootstrap",
-            "Render"
+            "Render",
+            "Typekit"
+        ],
+        "languages": [
+            "JavaScript"
         ],
         "live": "https://website-tzf6.onrender.com/"
     },
     "AWS_IAC_Celestes": {
         "features": [
-            "Serverless backend with AWS SAM",
-            "Reusable Lambda Layers",
-            "Secure authentication via Cognito"
+            "Serverless, scalable backend leveraging AWS SAM",
+            "Reusable Lambda Layers to streamline cloud operations",
+            "Highly secure authentication with AWS Cognito"
         ],
         "technologies": [
             "AWS Lambda",
@@ -96,8 +110,13 @@ export const REPOS_DETAILS: ReposDetailsType = {
             "AWS IAM",
             "Lambda Layers",
             "SSM Parameter Store"
+        ],
+        "languages": [
+            "YAML"
         ]
     }
+
+
 
 
 }

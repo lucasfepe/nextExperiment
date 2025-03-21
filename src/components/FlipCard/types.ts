@@ -7,6 +7,7 @@ export interface FlipCardProps {
     projectImages?: string[];
     features: string[];
     languages: string[];
+    extraLanguages?: string[];
     technologies: string[];
     live?: string;
     isExpanded: boolean;

@@ -19,6 +19,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
   projectImages,
   features,
   languages,
+  extraLanguages,
   technologies,
   live,
   isExpanded,
@@ -147,7 +148,7 @@ export const FlipCard: React.FC<FlipCardProps> = ({
           description={longDescription}
           projectImages={projectImages}
           features={features}
-          languages={languages}
+          languages={[...languages, ...(extraLanguages ?? [])]}
           technologies={technologies}
           live={live}
         />

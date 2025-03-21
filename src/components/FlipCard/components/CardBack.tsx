@@ -100,7 +100,7 @@ export const CardBack: React.FC<CardBackProps> = ({
         </h2>
         <p className={styles.longDescription}>{description}</p>
       </div>
-      <div className={`${styles.backContent} `}>
+      <div className={projectImages ? styles.backContent : styles.fullWidthContent}>
         <div>
           {live && <div>
             🔗 <a href={live} target="_blank" rel="noopener noreferrer">Visit the live site</a>

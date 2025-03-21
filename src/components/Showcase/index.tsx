@@ -94,6 +94,7 @@ export const Showcase: React.FC = () => {
         languages={repo.languages.nodes.map(
           (lang: { name: string }) => lang.name
         )}
+        extraLanguages={REPOS_DETAILS[repo.name].languages}
         isExpanded={expandedCard === repo.name}
         onToggle={(e) => {
           handleCardToggle(expandedCard === repo.name ? null : repo.name);
